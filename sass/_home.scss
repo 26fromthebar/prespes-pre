@@ -1,0 +1,529 @@
+/* Hero section styling start */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background-image: linear-gradient(rgba(#000, 0.2) 0%, rgba(#000, 0.15) 100%),
+    url('../assets/webp-img/hero_image.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: darken;
+
+  position: relative;
+
+  &__title {
+    max-width: 15ch;
+    color: var(--color-white);
+
+    position: relative;
+    z-index: 20;
+  }
+
+  &__subtitle {
+    font-family: var(--ff-dancing);
+    font-size: clamp(1.25rem, 0.9776rem + 1.2821vw, 2.5rem);
+    line-height: 0.7;
+
+    position: relative;
+    z-index: 20;
+  }
+
+  &__subtitle--1 {
+    @extend .hero__subtitle;
+    color: var(--color-secondary);
+  }
+
+  &__subtitle--2 {
+    @extend .hero__subtitle;
+    color: var(--color-tertiary);
+  }
+
+  &__fader-top,
+  &__fader-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    & svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__fader-top {
+    top: -1px;
+  }
+
+  &__fader-bottom {
+    bottom: -1px;
+  }
+}
+
+/* Hero section styling end */
+
+/* Sightseeing section styling start */
+.sightseeing {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--responsive-5);
+
+  padding-top: var(--responsive-10);
+
+  // &__title {
+  // }
+
+  &__content-wrapper {
+    display: grid;
+    grid-template-areas:
+      'card1'
+      'card2'
+      'card3';
+
+    align-items: center;
+    justify-items: center;
+
+    row-gap: 1rem;
+  }
+
+  &__item--1 {
+    grid-area: card1;
+  }
+
+  &__item--2 {
+    grid-area: card2;
+  }
+
+  &__item--3 {
+    grid-area: card3;
+  }
+}
+
+/* Media queries sightseeing section */
+@media screen and (min-width: 60em) {
+  .sightseeing {
+    &__content-wrapper {
+      grid-template-areas:
+        'card1 card2'
+        'card1 card3';
+
+      grid-template-columns: 1.33fr 1fr;
+      row-gap: 2rem;
+      column-gap: 2rem;
+    }
+  }
+}
+/* Sightseeing section styling end */
+
+/* Experiences section styling start */
+.experiences {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--responsive-5);
+
+  padding-top: var(--responsive-10);
+
+  // &__title {
+  // }
+
+  &__content-wrapper {
+    display: grid;
+    grid-template-areas:
+      'card1'
+      'card2'
+      'card3'
+      'card4';
+
+    row-gap: 1rem;
+  }
+
+  &__item--1 {
+    grid-area: card1;
+  }
+
+  &__item--2 {
+    grid-area: card2;
+  }
+
+  &__item--3 {
+    grid-area: card3;
+  }
+
+  &__item--4 {
+    grid-area: card4;
+  }
+}
+/* Media queries for experiences section */
+@media screen and (min-width: 60em) {
+  .experiences {
+    &__content-wrapper {
+      grid-template-areas:
+        'card1 card2'
+        'card3 card4';
+
+      grid-template-rows: 25rem 25rem;
+      column-gap: 2rem;
+      row-gap: 2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .experiences {
+    &__content-wrapper {
+      grid-template-areas:
+        'card1 card2 card3'
+        'card4 card4 card4';
+    }
+  }
+}
+/* Experiences section styling end */
+
+/* News section styling start */
+.news {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--responsive-5);
+
+  padding-top: var(--responsive-10);
+  position: relative;
+
+  &__btn-box {
+    right: 2.5%;
+  }
+
+  &__fader {
+    display: none;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    width: clamp(14rem, 30%, 25rem);
+
+    background-image: url('../assets/icons/slider_fader.svg');
+    background-size: contain;
+    background-position: right center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  &__slider {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+}
+
+/* Media queries for news section */
+@media screen and (min-width: 40em) {
+  .news {
+    &__fader {
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: 65em) {
+  .news {
+    &__btn-box {
+      position: absolute;
+      top: var(--responsive-10);
+      right: 5%;
+    }
+  }
+}
+
+/* News section styling end */
+
+/* Video-presenation section styling start */
+.video-presentation {
+  padding-top: var(--responsive-10);
+}
+/* Video-presenation section styling end */
+
+/* Events section styling start */
+.events {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--responsive-5);
+
+  padding-top: var(--responsive-10);
+  padding-bottom: var(--responsive-10);
+
+  position: relative;
+
+  // &__title {
+  // }
+
+  &__btn-box {
+    right: 2.5%;
+  }
+
+  &__slider {
+    width: 100%;
+    margin-bottom: 1.5rem;
+
+    position: relative;
+  }
+
+  &__fader {
+    display: none;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    width: clamp(14rem, 30%, 25rem);
+
+    background-image: url('../assets/icons/slider_fader.svg');
+    background-size: contain;
+    background-position: right center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 100;
+  }
+}
+
+/* Media queries for events section */
+@media screen and (min-width: 40em) {
+  .events {
+    &__fader {
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: 65em) {
+  .events {
+    &__btn-box {
+      position: absolute;
+      top: var(--responsive-10);
+      right: 5%;
+    }
+  }
+}
+/* Events section styling start */
+
+/* Newsletter section styling start */
+.newsletter {
+  padding-block: calc(var(--responsive-10) / 2);
+  padding-inline: 10vw;
+  background-color: var(--color-tertiary);
+  overflow: hidden;
+
+  &__content-wrapper {
+    width: fit-content;
+    margin: 0 auto;
+
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    margin-bottom: 2rem;
+    line-height: 1.3;
+
+    position: relative;
+
+    &::after {
+      content: url('../assets/icons/envelope.svg');
+      position: absolute;
+      top: -2.25em;
+      right: -2.25em;
+
+      z-index: -1;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &__input-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    width: 100%;
+  }
+
+  &__input {
+    padding: 0.5em 0.75em;
+    border: 0;
+    width: clamp(15rem, 48%, 30rem);
+
+    &:focus-within {
+      outline: 2px solid var(--color-primary);
+    }
+  }
+
+  &__policy {
+    max-width: 90ch;
+    font-size: var(--fs-14);
+  }
+
+  &__btn {
+    padding: 0.75em 2.15em;
+    border: 0;
+    background-color: var(--color-primary);
+    font-size: var(--fs-16);
+    font-weight: 700;
+    color: var(--color-white);
+
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+      background-color: var(--color-secondary);
+      color: var(--color-primary);
+    }
+  }
+}
+
+/* Media quries for newsletter section */
+@media screen and (min-width: 65em) {
+  .newsletter {
+    &__input-wrapper {
+      justify-content: space-between;
+      gap: 4%;
+      width: 100%;
+    }
+
+    &__btn {
+      align-self: flex-start;
+    }
+  }
+}
+/* Newsletter section styling end */
+
+/* Trip-planner section styling start */
+.trip-planner {
+  padding-top: var(--responsive-10);
+
+  &__title {
+    margin-bottom: var(--responsive-4);
+  }
+
+  &__info-box {
+    display: grid;
+    row-gap: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 25em) {
+  .trip-planner {
+    &__info-box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 3rem;
+      column-gap: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .trip-planner {
+    &__info-box {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      row-gap: 3rem;
+    }
+  }
+}
+/* Trip-planner section styling end */
+
+/* Follow-us section styling start */
+.follow {
+  padding-top: var(--responsive-10);
+  padding-bottom: var(--responsive-10);
+
+  &__title {
+    margin-bottom: var(--responsive-4);
+  }
+
+  &__content-box {
+    display: grid;
+    gap: var(--responsive-2);
+  }
+}
+
+/* Media queries for follow-us section */
+@media screen and (min-width: 30em) {
+  .follow {
+    &__content-box {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and (min-width: 65em) {
+  .follow {
+    &__content-box {
+      display: grid;
+
+      grid-template-columns: repeat(13, 1fr);
+    }
+  }
+
+  .follow-card--1 {
+    grid-column: 2 / 5;
+  }
+
+  .follow-card--2 {
+    grid-column: 5 / 8;
+  }
+
+  .follow-card--3 {
+    grid-column: 8 / 11;
+  }
+
+  .follow-card--4 {
+    grid-column: 11 / -1;
+  }
+
+  .follow-card--5 {
+    grid-column: 1 / 4;
+  }
+
+  .follow-card--6 {
+    grid-column: 4 / 7;
+  }
+
+  .follow-card--7 {
+    grid-column: 7 / 10;
+  }
+
+  .follow-card--8 {
+    grid-column: 10 / 13;
+  }
+}
+/* Follow-us section styling end */

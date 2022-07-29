@@ -1,0 +1,2153 @@
+<!DOCTYPE html>
+<html lang="el">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Η επίσημη ιστοσελίδα του δήμου Πρεσπών, πληροφορίες για το δήμο, υπηρεσίες για δημότες, τουρισμός."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fira+Sans:wght@700;900&family=Inter:wght@500&family=Roboto+Slab:wght@700&family=Roboto:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Πρέσπες</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script
+      src="https://unpkg.com/swiper@8/swiper-bundle.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+      integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      defer
+    ></script>
+    <script src="js/accessibility.js" defer></script>
+    <script src="js/index.js" defer></script>
+  </head>
+  <body>
+    <!-- Cookies notice start -->
+    <div class="cookies">
+      <div class="cookies__content">
+        <h2 class="cookies__title">Αυτός ο ιστότοπος χρησιμοποιεί Cookies</h2>
+        <p class="cookies__text">
+          We use cookies to personalise content and ads, to provide social media
+          features and to analyse our traffic. We also share information about
+          your use of our site with our social media, advertising and analytics
+          partners who may combine it with other information that you’ve
+          provided to them or that they’ve collected from your use of their
+          services.
+        </p>
+        <button class="cookies__btn--accept">Αποδοχή Cookies</button>
+        <button class="cookies__btn--refuse">Απόρριψη Cookies</button>
+      </div>
+    </div>
+    <!-- Cookies notice end -->
+
+    <!-- Header start -->
+    <header class="header">
+      <div class="header__logo-container">
+        <div class="header__logo">
+          <img
+            src="./assets/icons/logo_prespes.svg"
+            alt="Municipality of Prespes logo"
+          />
+        </div>
+        <p class="header__logo-title">VisitPrespes</p>
+      </div>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link expand-link expand-link--0"
+              >ΠΡΟΟΡΙΣΜΟΙ</a
+            >
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link expand-link expand-link--1"
+              >ΕΜΠΕΙΡΙΕΣ</a
+            >
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link expand-link expand-link--2"
+              >ΧΡΗΣΙΜΑ</a
+            >
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link expand-link expand-link--3"
+              >ΕΚΔΗΛΩΣΕΙΣ</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <ul class="header__icon-list">
+        <li class="header__icon-item header__search expand-link expand-link--6">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 22 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21.4452 19.8541L16.5428 14.9517C17.7477 13.4062 18.4688 11.4597 18.4688 9.3457C18.4688 4.30919 14.3822 0.222656 9.3457 0.222656C4.30482 0.222656 0.222656 4.30927 0.222656 9.3457C0.222656 14.3821 4.30482 18.4688 9.3457 18.4688C11.4595 18.4688 13.4021 17.7518 14.9475 16.547L19.851 21.4463C19.851 21.4463 19.851 21.4464 19.851 21.4464C20.2922 21.8875 21.0044 21.8877 21.4458 21.4469C21.8878 21.0097 21.8879 20.292 21.4458 19.8548C21.4456 19.8546 21.4454 19.8544 21.4452 19.8541ZM9.3457 16.2027C5.56063 16.2027 2.48438 13.1263 2.48438 9.3457C2.48438 5.56493 5.56083 2.48438 9.3457 2.48438C13.1264 2.48438 16.207 5.56502 16.207 9.3457C16.207 13.1262 13.1266 16.2027 9.3457 16.2027Z"
+              stroke-width="0.5"
+            />
+          </svg>
+        </li>
+        <li class="header__icon-item header__weather">
+          <img
+            src="./assets/icons/wheather_sunny.svg"
+            class="header__weather-icon"
+            alt="Weather icon"
+          />
+          <p class="header__weather-temp"></p>
+        </li>
+        <li class="header__icon-item header__map">
+          <svg
+            width="25"
+            height="25"
+            viewBox="0 0 25 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24.1875 0.125L23.9675 0.16625L16.625 3.0125L8.375 0.125L0.62 2.7375C0.33125 2.83375 0.125 3.08125 0.125 3.3975V24.1875C0.125 24.5725 0.4275 24.875 0.8125 24.875L1.0325 24.8337L8.375 21.9875L16.625 24.875L24.38 22.2625C24.6687 22.1663 24.875 21.9188 24.875 21.6025V0.8125C24.875 0.4275 24.5725 0.125 24.1875 0.125ZM9.75 3.52125L15.25 5.44625V21.4788L9.75 19.5537V3.52125ZM2.875 4.8825L7 3.49375V19.5812L2.875 21.1762V4.8825ZM22.125 20.1175L18 21.5062V5.4325L22.125 3.8375V20.1175Z"
+            />
+          </svg>
+        </li>
+      </ul>
+      <div class="header__ham-menu header__ham-menu--open">
+        <div class="line-center"></div>
+      </div>
+    </header>
+    <!-- Header end -->
+
+    <!-- Aside start -->
+    <!-- <aside class="aside aside--left"></aside> -->
+    <aside class="aside aside--right">
+      <nav class="aside__nav">
+        <ul class="aside__nav-list">
+          <li class="aside__list-item aside__language">
+            <svg
+              width="27"
+              height="27"
+              viewBox="0 0 27 27"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.6908 21.4771L15.925 21.5647L15.6908 21.4771C15.3488 22.392 14.96 23.1077 14.5666 23.5897C14.1666 24.0798 13.7982 24.2856 13.5 24.2856C13.2018 24.2856 12.8334 24.0798 12.4334 23.5897C12.04 23.1077 11.6512 22.3921 11.3091 21.4772C10.9122 20.4155 10.6036 19.168 10.3951 17.8009H16.6048C16.3964 19.168 16.0878 20.4155 15.6908 21.4771ZM15.6909 5.52282C16.0102 6.37685 16.2724 7.35148 16.4714 8.41221H10.5286C10.7276 7.35144 10.9898 6.37682 11.3092 5.52283L11.3092 5.52282C11.6512 4.6079 12.04 3.89223 12.4334 3.41032C12.8334 2.92023 13.2018 2.71441 13.5 2.71441C13.7982 2.71441 14.1666 2.92023 14.5666 3.41032C14.96 3.89223 15.3488 4.60791 15.6909 5.52282ZM5.8738 5.87335C7.10901 4.63812 8.59035 3.74023 10.2068 3.22426C9.93909 3.69904 9.69219 4.23715 9.46867 4.83498C9.07251 5.89448 8.75867 7.10486 8.53347 8.41221H3.98513C4.4797 7.48988 5.11239 6.63478 5.8738 5.87335ZM22.5157 4.48446C20.1079 2.07659 16.9052 0.75 13.5 0.75C10.0948 0.75 6.89213 2.07659 4.48431 4.48446C2.07653 6.89227 0.75 10.0948 0.75 13.5C0.75 16.9052 2.07653 20.1077 4.48431 22.5155C6.89213 24.9234 10.0948 26.25 13.5 26.25C16.9052 26.25 20.1079 24.9234 22.5157 22.5155C24.9235 20.1077 26.25 16.9052 26.25 13.5C26.25 10.0948 24.9235 6.89227 22.5157 4.48446ZM16.8283 15.8365H10.1717C10.113 15.0774 10.0827 14.2955 10.0827 13.5C10.0827 12.4264 10.1376 11.3776 10.2435 10.3767H16.7565C16.8624 11.3777 16.9173 12.4265 16.9173 13.5C16.9173 14.2955 16.8871 15.0774 16.8283 15.8365ZM2.71484 13.5C2.71484 12.4259 2.87136 11.3763 3.17226 10.3767H8.26935C8.16948 11.3852 8.11782 12.4328 8.11782 13.5C8.11782 14.2924 8.14637 15.0738 8.20185 15.8365H2.96782C2.80101 15.0779 2.71484 14.2957 2.71484 13.5ZM24.0322 15.8364H18.7981C18.8536 15.0738 18.8822 14.2923 18.8822 13.5C18.8822 12.4328 18.8305 11.3852 18.7306 10.3766H23.8277C24.1286 11.3763 24.2852 12.4258 24.2852 13.5C24.2852 14.2957 24.1989 15.0779 24.0322 15.8364ZM21.1262 5.87335C21.8876 6.63478 22.5203 7.48988 23.0149 8.41221H18.4665C18.2413 7.10486 17.9275 5.89448 17.5313 4.83498C17.3078 4.23715 17.0609 3.69903 16.7932 3.22425C18.4096 3.74019 19.8909 4.63807 21.1262 5.87335ZM9.46871 22.165C9.69224 22.7628 9.93914 23.301 10.2068 23.7758C8.59043 23.2598 7.10906 22.3619 5.87385 21.1267C4.90004 20.1528 4.13631 19.026 3.60368 17.8009H8.41023C8.63765 19.411 8.99434 20.8963 9.46871 22.165ZM21.1262 21.1267C19.891 22.3619 18.4096 23.2598 16.7932 23.7758C17.0609 23.301 17.3078 22.7629 17.5313 22.165C18.0057 20.8963 18.3624 19.411 18.5898 17.8009H23.3963C22.8637 19.026 22.1 20.1528 21.1262 21.1267Z"
+                fill="white"
+                stroke="white"
+                stroke-width="0"
+              />
+            </svg>
+          </li>
+          <li class="aside__list-item aside__login">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14 0.666504C6.64002 0.666504 0.666687 6.63984 0.666687 13.9998C0.666687 21.3598 6.64002 27.3332 14 27.3332C21.36 27.3332 27.3334 21.3598 27.3334 13.9998C27.3334 6.63984 21.36 0.666504 14 0.666504ZM7.42669 22.3732C8.00002 21.1732 11.4934 19.9998 14 19.9998C16.5067 19.9998 20.0134 21.1732 20.5734 22.3732C18.76 23.8132 16.48 24.6665 14 24.6665C11.52 24.6665 9.24002 23.8132 7.42669 22.3732ZM22.48 20.4398C20.5734 18.1198 15.9467 17.3332 14 17.3332C12.0534 17.3332 7.42669 18.1198 5.52002 20.4398C4.16002 18.6532 3.33335 16.4265 3.33335 13.9998C3.33335 8.11984 8.12002 3.33317 14 3.33317C19.88 3.33317 24.6667 8.11984 24.6667 13.9998C24.6667 16.4265 23.84 18.6532 22.48 20.4398ZM14 5.99984C11.4134 5.99984 9.33335 8.07984 9.33335 10.6665C9.33335 13.2532 11.4134 15.3332 14 15.3332C16.5867 15.3332 18.6667 13.2532 18.6667 10.6665C18.6667 8.07984 16.5867 5.99984 14 5.99984ZM14 12.6665C12.8934 12.6665 12 11.7732 12 10.6665C12 9.55984 12.8934 8.6665 14 8.6665C15.1067 8.6665 16 9.55984 16 10.6665C16 11.7732 15.1067 12.6665 14 12.6665Z"
+                fill="white"
+              />
+            </svg>
+          </li>
+          <li class="aside__list-item aside__facebook">
+            <a href="#" class="" aria-label="Link for facebook">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_149_312)">
+                  <path
+                    d="M27.9734 8.23208C27.9079 6.74433 27.6673 5.72152 27.3226 4.83523C26.9671 3.89447 26.4201 3.0522 25.7035 2.35202C25.0033 1.64095 24.1555 1.08841 23.2256 0.738425C22.3342 0.393784 21.3167 0.153198 19.829 0.0876025C18.3301 0.0164522 17.8543 0 14.0528 0C10.2513 0 9.77542 0.0164522 8.28212 0.0820473C6.79437 0.147642 5.77156 0.388443 4.88549 0.73287C3.94451 1.08841 3.10225 1.63539 2.40207 2.35202C1.69099 3.0522 1.13867 3.90002 0.788474 4.82989C0.443833 5.72152 0.203246 6.73877 0.137651 8.22652C0.066501 9.72538 0.0500488 10.2012 0.0500488 14.0027C0.0500488 17.8043 0.066501 18.2801 0.132096 19.7734C0.197691 21.2611 0.438491 22.284 0.783132 23.1702C1.13867 24.111 1.69099 24.9533 2.40207 25.6534C3.10225 26.3645 3.95007 26.9171 4.87994 27.267C5.77156 27.6117 6.78882 27.8523 8.27678 27.9179C9.76987 27.9837 10.2459 27.9999 14.0474 27.9999C17.849 27.9999 18.3248 27.9837 19.8181 27.9179C21.3058 27.8523 22.3286 27.6117 23.2147 27.267C25.0965 26.5395 26.5842 25.0518 27.3117 23.1702C27.6562 22.2786 27.897 21.2611 27.9626 19.7734C28.0281 18.2801 28.0446 17.8043 28.0446 14.0027C28.0446 10.2012 28.039 9.72538 27.9734 8.23208ZM25.452 19.664C25.3917 21.0315 25.1621 21.7699 24.9706 22.2622C24.5001 23.482 23.532 24.4501 22.3122 24.9206C21.8199 25.112 21.0761 25.3417 19.714 25.4017C18.2372 25.4676 17.7943 25.4838 14.0583 25.4838C10.3224 25.4838 9.87392 25.4676 8.40241 25.4017C7.03496 25.3417 6.29653 25.112 5.80425 24.9206C5.19723 24.6962 4.64469 24.3407 4.19621 23.8758C3.73128 23.4217 3.37574 22.8747 3.15139 22.2677C2.95995 21.7754 2.73026 21.0315 2.67022 19.6696C2.60441 18.1927 2.58817 17.7496 2.58817 14.0136C2.58817 10.2777 2.60441 9.82922 2.67022 8.35792C2.73026 6.99047 2.95995 6.25204 3.15139 5.75976C3.37574 5.15253 3.73128 4.6002 4.20177 4.15151C4.65559 3.68657 5.20257 3.33103 5.80981 3.1069C6.30209 2.91546 7.04607 2.68577 8.40797 2.62551C9.88482 2.55992 10.328 2.54347 14.0637 2.54347C17.8052 2.54347 18.2481 2.55992 19.7196 2.62551C21.087 2.68577 21.8255 2.91546 22.3177 3.1069C22.9248 3.33103 23.4773 3.68657 23.9258 4.15151C24.3907 4.60554 24.7463 5.15253 24.9706 5.75976C25.1621 6.25204 25.3917 6.99581 25.452 8.35792C25.5176 9.83478 25.534 10.2777 25.534 14.0136C25.534 17.7496 25.5176 18.1871 25.452 19.664Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M20.6376 15.9807H17.9681V26H13.9236V15.9807H12V12.4596H13.9236V10.181C13.9236 8.55154 14.6791 6 18.0041 6L21 6.01284V9.43073H18.8263C18.4697 9.43073 17.9684 9.61324 17.9684 10.3905V12.4628H20.9909L20.6376 15.9807Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_149_312">
+                    <rect width="28" height="28" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+          </li>
+          <li class="aside__list-item aside__instagram">
+            <a href="#" class="" aria-label="Link for instagram">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_149_308)">
+                  <path
+                    d="M27.9734 8.23208C27.9079 6.74433 27.6673 5.72152 27.3226 4.83523C26.9671 3.89447 26.4201 3.0522 25.7035 2.35202C25.0033 1.64095 24.1555 1.08841 23.2256 0.738425C22.3342 0.393784 21.3167 0.153198 19.829 0.0876025C18.3301 0.0164522 17.8543 0 14.0528 0C10.2513 0 9.77542 0.0164522 8.28212 0.0820473C6.79437 0.147642 5.77156 0.388443 4.88549 0.73287C3.94451 1.08841 3.10225 1.63539 2.40207 2.35202C1.69099 3.0522 1.13867 3.90002 0.788474 4.82989C0.443833 5.72152 0.203246 6.73877 0.137651 8.22652C0.066501 9.72538 0.0500488 10.2012 0.0500488 14.0027C0.0500488 17.8043 0.066501 18.2801 0.132096 19.7734C0.197691 21.2611 0.438491 22.284 0.783132 23.1702C1.13867 24.111 1.69099 24.9533 2.40207 25.6534C3.10225 26.3645 3.95007 26.9171 4.87994 27.267C5.77156 27.6117 6.78882 27.8523 8.27678 27.9179C9.76987 27.9837 10.2459 27.9999 14.0474 27.9999C17.849 27.9999 18.3248 27.9837 19.8181 27.9179C21.3058 27.8523 22.3286 27.6117 23.2147 27.267C25.0965 26.5395 26.5842 25.0518 27.3117 23.1702C27.6562 22.2786 27.897 21.2611 27.9626 19.7734C28.0281 18.2801 28.0446 17.8043 28.0446 14.0027C28.0446 10.2012 28.039 9.72538 27.9734 8.23208ZM25.452 19.664C25.3917 21.0315 25.1621 21.7699 24.9706 22.2622C24.5001 23.482 23.532 24.4501 22.3122 24.9206C21.8199 25.112 21.0761 25.3417 19.714 25.4017C18.2372 25.4676 17.7943 25.4838 14.0583 25.4838C10.3224 25.4838 9.87392 25.4676 8.40241 25.4017C7.03496 25.3417 6.29653 25.112 5.80425 24.9206C5.19723 24.6962 4.64469 24.3407 4.19621 23.8758C3.73128 23.4217 3.37574 22.8747 3.15139 22.2677C2.95995 21.7754 2.73026 21.0315 2.67022 19.6696C2.60441 18.1927 2.58817 17.7496 2.58817 14.0136C2.58817 10.2777 2.60441 9.82922 2.67022 8.35792C2.73026 6.99047 2.95995 6.25204 3.15139 5.75976C3.37574 5.15253 3.73128 4.6002 4.20177 4.15151C4.65559 3.68657 5.20257 3.33103 5.80981 3.1069C6.30209 2.91546 7.04607 2.68577 8.40797 2.62551C9.88482 2.55992 10.328 2.54347 14.0637 2.54347C17.8052 2.54347 18.2481 2.55992 19.7196 2.62551C21.087 2.68577 21.8255 2.91546 22.3177 3.1069C22.9248 3.33103 23.4773 3.68657 23.9258 4.15151C24.3907 4.60554 24.7463 5.15253 24.9706 5.75976C25.1621 6.25204 25.3917 6.99581 25.452 8.35792C25.5176 9.83478 25.534 10.2777 25.534 14.0136C25.534 17.7496 25.5176 18.1871 25.452 19.664Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M14.0519 6.80981C10.081 6.80981 6.85913 10.0315 6.85913 14.0026C6.85913 17.9738 10.081 21.1954 14.0519 21.1954C18.0231 21.1954 21.2448 17.9738 21.2448 14.0026C21.2448 10.0315 18.0231 6.80981 14.0519 6.80981ZM14.0519 18.6684C11.4758 18.6684 9.38614 16.579 9.38614 14.0026C9.38614 11.4263 11.4758 9.33683 14.0519 9.33683C16.6283 9.33683 18.7177 11.4263 18.7177 14.0026C18.7177 16.579 16.6283 18.6684 14.0519 18.6684Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M23.2085 6.52539C23.2085 7.45269 22.4566 8.20458 21.5291 8.20458C20.6018 8.20458 19.8499 7.45269 19.8499 6.52539C19.8499 5.59787 20.6018 4.84619 21.5291 4.84619C22.4566 4.84619 23.2085 5.59787 23.2085 6.52539Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_149_308">
+                    <rect width="28" height="28" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+          </li>
+          <li class="aside__list-item aside__youtube">
+            <a href="#" class="" aria-label="Link for youtube">
+              <svg
+                width="30"
+                height="28"
+                viewBox="0 0 30 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M29.1291 8.23208C29.0636 6.74433 28.823 5.72152 28.4783 4.83523C28.1228 3.89447 27.5758 3.0522 26.8592 2.35202C26.159 1.64095 25.3112 1.08841 24.3813 0.738425C23.4899 0.393784 22.4724 0.153198 20.9847 0.0876025C19.4858 0.0164522 23.01 0 14.0027 0C10.2012 0 9.72537 0.0164522 8.23207 0.0820473C6.74432 0.147642 5.72151 0.388443 4.83544 0.73287C3.89446 1.08841 3.0522 1.63539 2.35202 2.35202C1.64094 3.0522 1.08862 3.90002 0.738425 4.82989C0.393784 5.72152 0.153198 6.73877 0.0876025 8.22652C0.0164522 9.72538 0 10.2012 0 14.0027C0 17.8043 0.0164522 18.2801 0.0820472 19.7734C0.147642 21.2611 0.388442 22.284 0.733083 23.1702C1.08862 24.111 1.64094 24.9533 2.35202 25.6534C3.0522 26.3645 3.90002 26.9171 4.82989 27.267C5.72151 27.6117 6.73877 27.8523 8.22673 27.9179C9.71982 27.9837 10.1959 27.9999 13.9974 27.9999C23.0047 27.9999 19.4805 27.9837 20.9738 27.9179C22.4615 27.8523 23.4843 27.6117 24.3704 27.267C26.2522 26.5395 27.7399 25.0518 28.4674 23.1702C28.8119 22.2786 29.0527 21.2611 29.1183 19.7734C29.1838 18.2801 29.2003 17.8043 29.2003 14.0027C29.2003 10.2012 29.1947 9.72538 29.1291 8.23208ZM26.6077 19.664C26.5474 21.0315 26.3177 21.7699 26.1263 22.2622C25.6558 23.482 24.6877 24.4501 23.4679 24.9206C22.9756 25.112 22.2318 25.3417 20.8697 25.4017C19.3929 25.4676 22.95 25.4838 14.0083 25.4838C10.2724 25.4838 9.82387 25.4676 8.35236 25.4017C6.98491 25.3417 6.24648 25.112 5.7542 24.9206C5.14718 24.6962 4.59464 24.3407 4.14616 23.8758C3.68123 23.4217 3.32569 22.8747 3.10134 22.2677C2.9099 21.7754 2.68021 21.0315 2.62017 19.6696C2.55436 18.1927 2.53812 17.7496 2.53812 14.0136C2.53812 10.2777 2.55436 9.82922 2.62017 8.35792C2.68021 6.99047 2.9099 6.25205 3.10134 5.75976C3.32569 5.15253 3.68123 4.6002 4.15172 4.15151C4.60554 3.68657 5.15252 3.33103 5.75976 3.1069C6.25204 2.91546 6.99602 2.68577 8.35792 2.62551C9.83477 2.55992 10.2779 2.54347 14.0136 2.54347C22.9608 2.54347 19.4038 2.55992 20.8753 2.62551C22.2427 2.68577 22.9812 2.91546 23.4734 3.1069C24.0805 3.33103 24.633 3.68657 25.0815 4.15151C25.5464 4.60554 25.902 5.15253 26.1263 5.75976C26.3177 6.25205 26.5474 6.99581 26.6077 8.35792C26.6733 9.83477 26.6897 10.2777 26.6897 14.0136C26.6897 17.7496 26.6733 18.1871 26.6077 19.664Z"
+                  fill="white"
+                />
+                <path
+                  d="M12.7426 18.2426L20 14L12.7426 9.75736V18.2426Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+          </li>
+          <li class="aside__list-item aside__accessibility">
+            <button
+              id="universalAccessBtn"
+              accesskey="4"
+              class="mobile-hide collapsed"
+              aria-label="Open accessibility tool"
+            >
+              <svg
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.4913 11.1638C19.3596 11.1638 20.8741 9.64408 20.8741 7.7694C20.8741 5.89473 19.3596 4.375 17.4913 4.375C15.623 4.375 14.1085 5.89473 14.1085 7.7694C14.1085 9.64408 15.623 11.1638 17.4913 11.1638Z"
+                  fill="white"
+                />
+                <path
+                  d="M26.9632 13.2041L19.8579 13.844C19.5965 13.8675 19.3345 13.8793 19.0718 13.8793H15.9108C15.6483 13.8793 15.3862 13.8675 15.1247 13.844L8.01932 13.2041C7.53732 13.167 7.07217 13.3906 6.7991 13.7909C6.52602 14.1912 6.48648 14.7073 6.69533 15.1447C6.90418 15.5822 7.32985 15.8746 7.81185 15.9118L13.554 16.4345C14.2511 16.4979 14.7849 17.0843 14.785 17.7865V19.3466C14.785 19.7712 14.7056 20.1921 14.5509 20.5873L11.2839 28.936C11.0829 29.3788 11.1334 29.8958 11.4163 30.291C11.6991 30.6862 12.1713 30.8993 12.6536 30.8494C13.136 30.7998 13.555 30.4948 13.7519 30.0502L16.8772 22.4374C16.9796 22.1884 17.2216 22.0257 17.4901 22.0258H17.4924C17.7611 22.0258 18.0032 22.1883 18.1055 22.4376L21.2307 30.0501C21.5374 30.7339 22.3385 31.0387 23.02 30.7311C23.7015 30.4233 24.0053 29.6196 23.6987 28.9357L20.4316 20.5873C20.2769 20.192 20.1975 19.7712 20.1975 19.3466V17.7865C20.1976 17.0841 20.7313 16.4977 21.4285 16.4343L27.1707 15.9115C27.6556 15.8781 28.0854 15.5863 28.2965 15.147C28.5078 14.7078 28.468 14.1887 28.1924 13.7869C27.9167 13.3852 27.4475 13.1628 26.9632 13.2041Z"
+                  fill="white"
+                />
+                <circle
+                  cx="17.5"
+                  cy="17.5"
+                  r="16.5"
+                  stroke="white"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- Aside end -->
+
+    <!-- Expandable mega menus start -->
+    <div class="full-menu full-menu--left full-menu--collapse full-menu--0">
+      <button class="full-menu__back-btn" aria-label="Go back">
+        <svg
+          width="25"
+          height="25"
+          viewBox="0 0 25 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0.833293 13.9584L18.5812 13.9584L10.4291 22.1105L12.5 24.1667L24.1666 12.5001L12.5 0.833419L10.4437 2.88967L18.5812 11.0418L0.833293 11.0417L0.833293 13.9584Z"
+            fill="#07116B"
+          />
+        </svg>
+      </button>
+      <div class="full-menu__destinations">
+        <h3 class="full-menu__list-title">ΠΡΟΟΡΙΣΜΟΙ</h3>
+        <ul class="full-menu__list">
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Δήμος Πρεσπών</a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Αγιος Γερμανός</a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Μικρή Πρέσπα</a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Αγιος Αχίλειος</a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Αντάρτικο - Περβάλι</a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Ψαράδες</a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Μικρολίμνη</a>
+          </li>
+        </ul>
+      </div>
+      <div class="full-menu__img-wrapper">
+        <img
+          src="./assets/webp-img/limni_prespwn_1.webp"
+          alt="Lake of Prespes"
+          loading="lazy"
+        />
+      </div>
+    </div>
+    <div class="full-menu full-menu--left full-menu--collapse full-menu--1">
+      <button class="full-menu__back-btn" aria-label="Go back">
+        <svg
+          width="25"
+          height="25"
+          viewBox="0 0 25 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0.833293 13.9584L18.5812 13.9584L10.4291 22.1105L12.5 24.1667L24.1666 12.5001L12.5 0.833419L10.4437 2.88967L18.5812 11.0418L0.833293 11.0417L0.833293 13.9584Z"
+            fill="#07116B"
+          />
+        </svg>
+      </button>
+      <h3 class="full-menu__list-title">ΕΜΠΕΙΡΙΕΣ</h3>
+      <div class="full-menu__experiences">
+        <ul class="full-menu__list">
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Φύση</a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Γαστρονομία</a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Πολιτισμός</a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Δραστηριότητες</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="full-menu full-menu--left full-menu--collapse full-menu--2">
+      <button class="full-menu__back-btn" aria-label="Go back">
+        <svg
+          width="25"
+          height="25"
+          viewBox="0 0 25 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0.833293 13.9584L18.5812 13.9584L10.4291 22.1105L12.5 24.1667L24.1666 12.5001L12.5 0.833419L10.4437 2.88967L18.5812 11.0418L0.833293 11.0417L0.833293 13.9584Z"
+            fill="#07116B"
+          />
+        </svg>
+      </button>
+      <div class="full-menu__usefull">
+        <h3 class="full-menu__list-title">ΧΡΗΣΙΜΑ</h3>
+        <ul class="full-menu__list">
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Πώς να έρθετε</a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Χρήσιμες πληροφορίες</a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Media kit</a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Blog </a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Applications </a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Covid update</a>
+          </li>
+        </ul>
+      </div>
+      <div class="full-menu__img-wrapper">
+        <img
+          src="./assets/webp-img/dhmotes_1.webp"
+          alt="Citizen service desk"
+          loading="lazy"
+        />
+      </div>
+    </div>
+    <div class="full-menu full-menu--left full-menu--collapse full-menu--3">
+      <button class="full-menu__back-btn" aria-label="Go back">
+        <svg
+          width="25"
+          height="25"
+          viewBox="0 0 25 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0.833293 13.9584L18.5812 13.9584L10.4291 22.1105L12.5 24.1667L24.1666 12.5001L12.5 0.833419L10.4437 2.88967L18.5812 11.0418L0.833293 11.0417L0.833293 13.9584Z"
+            fill="#07116B"
+          />
+        </svg>
+      </button>
+      <div class="full-menu__events">
+        <h3 class="full-menu__list-title">ΕΚΔΗΛΩΣΕΙΣ</h3>
+        <ul class="full-menu__list">
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Lorem ipsum</a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Dolor sit amet</a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Consectetur</a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Adipisicing elit</a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Distinctio</a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Doloribus facilis magni</a>
+          </li>
+          <li class="full-menu__list-item">
+            <a href="#" class="full-menu__link">Iusto numquam</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="full-menu full-menu--left full-menu--collapse full-menu--5">
+      <button class="full-menu__back-btn" aria-label="Go back">
+        <svg
+          width="25"
+          height="25"
+          viewBox="0 0 25 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0.833293 13.9584L18.5812 13.9584L10.4291 22.1105L12.5 24.1667L24.1666 12.5001L12.5 0.833419L10.4437 2.88967L18.5812 11.0418L0.833293 11.0417L0.833293 13.9584Z"
+            fill="#07116B"
+          />
+        </svg>
+      </button>
+      <h3 class="full-menu__list-title">ΑΝΑΖΗΤΗΣΗ</h3>
+      <form class="full-menu__search-form">
+        <input
+          class="full-menu__search-input"
+          type="search"
+          name="search"
+          id="search"
+          placeholder="Τι θέλετε να μάθετε"
+        />
+        <button type="submit" class="full-menu__search-btn">Βρείτε</button>
+      </form>
+    </div>
+
+    <div class="full-menu__overlay disappear"></div>
+    <!-- Expandable mega menus end -->
+
+    <!-- Back to top button start -->
+    <div class="back-to-top hide">
+      <svg
+        width="16"
+        height="24"
+        viewBox="0 0 16 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.70711 0.292892C8.31658 -0.0976314 7.68342 -0.0976315 7.29289 0.292892L0.928933 6.65685C0.538409 7.04738 0.538409 7.68054 0.928933 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292892ZM9 24L9 1L7 1L7 24L9 24Z"
+          fill="#07116B"
+        />
+      </svg>
+    </div>
+    <!-- Back to top button end -->
+
+    <!-- Parallax wrapper start -->
+    <div class="parallax-wrapper">
+      <main class="main">
+        <!-- Hero section start -->
+        <section class="hero">
+          <p class="hero__subtitle--1">3 χώρες 2 λίμνες</p>
+          <h1 class="hero__title">ΕΝΑΣ ΜΟΝΑΔΙΚΟΣ ΠΡΟΟΡΙΣΜΟΣ</h1>
+          <p class="hero__subtitle--2">καλώς ήλθατε στις Πρέσπες</p>
+          <!-- <div class="hero__fader"></div> -->
+          <div class="hero__fader-top">
+            <svg
+              width="1920"
+              height="247"
+              viewBox="0 0 1920 247"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              id="hero_fader_top"
+            >
+              <rect
+                width="1922"
+                height="247"
+                fill="url(#paint0_linear_149_325)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_149_325"
+                  x1="961"
+                  y1="0"
+                  x2="961"
+                  y2="247"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#07116B" />
+                  <stop offset="1" stop-color="#07116B" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="hero__fader-bottom">
+            <svg
+              width="1920"
+              height="254"
+              viewBox="0 0 1920 254"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              id="hero_fader_bottom"
+            >
+              <rect
+                x="-19"
+                width="1964"
+                height="254"
+                fill="url(#paint0_linear_149_320)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_149_320"
+                  x1="963"
+                  y1="0"
+                  x2="963"
+                  y2="254"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" stop-opacity="0" />
+                  <stop offset="1" stop-color="white" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </section>
+        <!-- Hero section end -->
+
+        <!-- Sightseeing section start -->
+        <section class="sightseeing home-container-center">
+          <h2 class="sightseeing__title">Κορυφαία αξιοθέατα</h2>
+
+          <div class="sightseeing__content-wrapper">
+            <!-- Sightseeing-card start -->
+            <div class="sightseeing-card--primary sightseeing__item--1">
+              <img
+                src="./assets/webp-img/agios_achillios.webp"
+                alt="Church of agios Achillios"
+                class="sightseeing-card__img"
+              />
+              <div class="sightseeing-card__content-box">
+                <h3 class="sightseeing-card__title">
+                  Βασιλική του Αγίου Αχιλλείου
+                </h3>
+                <p class="sightseeing-card__text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim
+                  omnis adipisci sunt perferendis accusantium consequuntur nemo
+                  aut sequi maiores dolorem quisquam, quaerat a consequatur
+                  asperiores nobis? Delectus, est dolor quod laboriosam nihil
+                  illum? Voluptas dolor alias necessitatibus.
+                </p>
+              </div>
+              <svg
+                class="sightseeing-card__arrow"
+                width="29"
+                height="16"
+                viewBox="0 0 29 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                  fill="#95deee"
+                />
+              </svg>
+              <a href="#" class="sightseeing-card__link arrow-btn"
+                >Δείτε<svg
+                  width="29"
+                  height="16"
+                  viewBox="0 0 29 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                    fill="#95deee"
+                  />
+                </svg>
+              </a>
+              <div class="sightseeing-card__overlay"></div>
+            </div>
+            <!-- Sightseeing-card end -->
+            <!-- Sightseeing-card start -->
+            <div class="sightseeing-card--primary sightseeing__item--2">
+              <img
+                src="./assets/webp-img/agios_germanos.webp"
+                alt="Church of agios Germanos"
+                class="sightseeing-card__img"
+              />
+              <div class="sightseeing-card__content-box">
+                <h3 class="sightseeing-card__title">Αγιος Γερμανός</h3>
+                <p class="sightseeing-card__text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim
+                  omnis adipisci sunt perferendis accusantium consequuntur nemo
+                  aut sequi maiores dolorem quisquam, quaerat a consequatur
+                  asperiores nobis.
+                </p>
+              </div>
+              <svg
+                class="sightseeing-card__arrow"
+                width="29"
+                height="16"
+                viewBox="0 0 29 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                  fill="#95deee"
+                />
+              </svg>
+              <a href="#" class="sightseeing-card__link arrow-btn"
+                >Δείτε<svg
+                  width="29"
+                  height="16"
+                  viewBox="0 0 29 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                    fill="#95deee"
+                  />
+                </svg>
+              </a>
+              <div class="sightseeing-card__overlay"></div>
+            </div>
+            <!-- Sightseeing-card end -->
+            <!-- Sightseeing-card start -->
+            <div class="sightseeing-card--primary sightseeing__item--3">
+              <img
+                src="./assets/webp-img/agios_germanos.webp"
+                alt="Church of agios Germanos"
+                class="sightseeing-card__img"
+              />
+              <div class="sightseeing-card__content-box">
+                <h3 class="sightseeing-card__title">Αγιος Γερμανός</h3>
+                <p class="sightseeing-card__text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim
+                  omnis adipisci sunt perferendis accusantium consequuntur nemo
+                  aut sequi maiores dolorem quisquam, quaerat a consequatur
+                  asperiores nobis
+                </p>
+              </div>
+              <svg
+                class="sightseeing-card__arrow"
+                width="29"
+                height="16"
+                viewBox="0 0 29 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                  fill="#95deee"
+                />
+              </svg>
+              <a href="#" class="sightseeing-card__link arrow-btn"
+                >Δείτε<svg
+                  width="29"
+                  height="16"
+                  viewBox="0 0 29 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                    fill="#95deee"
+                  />
+                </svg>
+              </a>
+              <div class="sightseeing-card__overlay"></div>
+            </div>
+            <!-- Sightseeing-card end -->
+          </div>
+          <!-- Section button start -->
+          <a href="#" class="sightseeing__link section-btn"
+            >Δείτε τα όλα<svg
+              width="29"
+              height="16"
+              viewBox="0 0 29 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                fill="#ffffff"
+              />
+            </svg>
+          </a>
+          <!-- Section button end -->
+        </section>
+        <!-- Sightseeing section end -->
+
+        <!-- Experiences section start -->
+        <section class="experiences home-container-center">
+          <h2 class="experiences__title">ΜΟΝΑΔΙΚΕΣ ΕΜΠΕΙΡΙΕΣ</h2>
+
+          <div class="experiences__content-wrapper">
+            <!-- Experiences-card start -->
+            <div class="experiences__item--1 experiences-card--small">
+              <div class="experiences-card__content-box">
+                <h3 class="experiences-card__title">Μικρή & Μεγάλη Πρέσπα</h3>
+                <p class="experiences-card__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
+                  sed velit. Esse ullam itaque nam praesentium reprehenderit
+                  totam nesciunt culpa.
+                </p>
+              </div>
+              <a
+                href="#"
+                class="experiences-card__link"
+                aria-label="Discover all"
+              >
+                <svg
+                  width="29"
+                  height="16"
+                  viewBox="0 0 29 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                    fill="#95deee"
+                  />
+                </svg>
+              </a>
+              <div class="experiences-card__overlay"></div>
+            </div>
+            <!-- Experiences-card end -->
+            <!-- Experiences-card start -->
+            <div class="experiences__item--2 experiences-card--small">
+              <div class="experiences-card__content-box">
+                <h3 class="experiences-card__title">Μικρή & Μεγάλη Πρέσπα</h3>
+                <p class="experiences-card__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
+                  sed velit. Esse ullam itaque nam praesentium reprehenderit
+                  totam nesciunt culpa.
+                </p>
+              </div>
+              <a
+                href="#"
+                class="experiences-card__link"
+                aria-label="Discover all"
+              >
+                <svg
+                  width="29"
+                  height="16"
+                  viewBox="0 0 29 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                    fill="#95deee"
+                  />
+                </svg>
+              </a>
+              <div class="experiences-card__overlay"></div>
+            </div>
+            <!-- Experiences-card end -->
+            <!-- Experiences-card start -->
+            <div class="experiences__item--3 experiences-card--small">
+              <div class="experiences-card__content-box">
+                <h3 class="experiences-card__title">Μικρή & Μεγάλη Πρέσπα</h3>
+                <p class="experiences-card__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
+                  sed velit. Esse ullam itaque nam praesentium reprehenderit
+                  totam nesciunt culpa.
+                </p>
+              </div>
+              <a
+                href="#"
+                class="experiences-card__link"
+                aria-label="Discover all"
+              >
+                <svg
+                  width="29"
+                  height="16"
+                  viewBox="0 0 29 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                    fill="#95deee"
+                  />
+                </svg>
+              </a>
+              <div class="experiences-card__overlay"></div>
+            </div>
+            <!-- Experiences-card end -->
+            <!-- Experiences-card start -->
+            <div class="experiences__item--4 experiences-card--large">
+              <div class="experiences-card__content-box">
+                <h3 class="experiences-card__title">Μικρή & Μεγάλη Πρέσπα</h3>
+                <p class="experiences-card__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
+                  sed velit. Esse ullam itaque nam praesentium reprehenderit
+                  totam nesciunt culpa.
+                </p>
+              </div>
+              <a
+                href="#"
+                class="experiences-card__link"
+                aria-label="Discover all"
+              >
+                <svg
+                  width="29"
+                  height="16"
+                  viewBox="0 0 29 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                    fill="#95deee"
+                  />
+                </svg>
+              </a>
+              <div class="experiences-card__overlay"></div>
+            </div>
+            <!-- Experiences-card end -->
+          </div>
+          <!-- Section button start -->
+          <a href="#" class="experiences__link section-btn"
+            >Δείτε τα όλα<svg
+              width="29"
+              height="16"
+              viewBox="0 0 29 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                fill="#ffffff"
+              />
+            </svg>
+          </a>
+          <!-- Section button end -->
+        </section>
+        <!-- Experiences section end -->
+
+        <!-- News section start -->
+        <section class="news home-container-right">
+          <h2 class="news__title">Τα νέα του δήμου μας</h2>
+          <div class="news__btn-box slider-btn-box">
+            <div class="slider-btn-prev news__swiper-button-prev">
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.833293 13.9584L18.5812 13.9584L10.4291 22.1105L12.5 24.1667L24.1666 12.5001L12.5 0.833419L10.4437 2.88967L18.5812 11.0418L0.833293 11.0417L0.833293 13.9584Z"
+                  fill="#07116B"
+                />
+              </svg>
+            </div>
+            <div class="slider-btn-next news__swiper-button-next">
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.833293 13.9584L18.5812 13.9584L10.4291 22.1105L12.5 24.1667L24.1666 12.5001L12.5 0.833419L10.4437 2.88967L18.5812 11.0418L0.833293 11.0417L0.833293 13.9584Z"
+                  fill="#07116B"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="news__slider">
+            <div class="news__fader"></div>
+            <div class="swiper news__swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <!-- News-card start -->
+                  <div class="news-card">
+                    <div class="news-card__img-container">
+                      <img
+                        src="./assets/webp-img/agios_achillios_small.webp"
+                        alt="View of agios Achillios church"
+                        class="news-card__img"
+                      />
+                    </div>
+                    <div class="news-card__content">
+                      <h3 class="news-card__title">Τα νέα του δήμου μας</h3>
+                      <p class="news-card__text">
+                        Τα τελευταία χρόνια ωστόσο, καθώς η Πρέσπα έχει
+                        αναδειχθεί σε περιοχή διεθνούς ενδιαφέροντος,
+                        ενθαρρύνοντας την ανάπτυξη εναλλακτικών οικονομικών
+                        δραστηριοτήτων και μορφών τουρισμού.
+                      </p>
+
+                      <a href="#" class="news-card__link arrow-btn">
+                        Δείτε
+                        <svg
+                          width="29"
+                          height="16"
+                          viewBox="0 0 29 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                            fill="#95deee"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- News-card end -->
+                </div>
+                <div class="swiper-slide">
+                  <!-- News-card start -->
+                  <div class="news-card">
+                    <div class="news-card__img-container">
+                      <img
+                        src="./assets/webp-img/agios_achillios_small.webp"
+                        alt="View of agios Achillios church"
+                        class="news-card__img"
+                      />
+                    </div>
+                    <div class="news-card__content">
+                      <h3 class="news-card__title">Τα νέα του δήμου μας</h3>
+                      <p class="news-card__text">
+                        Τα τελευταία χρόνια ωστόσο, καθώς η Πρέσπα έχει
+                        αναδειχθεί σε περιοχή διεθνούς ενδιαφέροντος,
+                        ενθαρρύνοντας την ανάπτυξη εναλλακτικών οικονομικών
+                        δραστηριοτήτων και μορφών τουρισμού.
+                      </p>
+
+                      <a href="#" class="news-card__link arrow-btn">
+                        Δείτε
+                        <svg
+                          width="29"
+                          height="16"
+                          viewBox="0 0 29 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                            fill="#95deee"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- News-card end -->
+                </div>
+                <div class="swiper-slide">
+                  <!-- News-card start -->
+                  <div class="news-card">
+                    <div class="news-card__img-container">
+                      <img
+                        src="./assets/webp-img/agios_achillios_small.webp"
+                        alt="View of agios Achillios church"
+                        class="news-card__img"
+                      />
+                    </div>
+                    <div class="news-card__content">
+                      <h3 class="news-card__title">Τα νέα του δήμου μας</h3>
+                      <p class="news-card__text">
+                        Τα τελευταία χρόνια ωστόσο, καθώς η Πρέσπα έχει
+                        αναδειχθεί σε περιοχή διεθνούς ενδιαφέροντος,
+                        ενθαρρύνοντας την ανάπτυξη εναλλακτικών οικονομικών
+                        δραστηριοτήτων και μορφών τουρισμού.
+                      </p>
+
+                      <a href="#" class="news-card__link arrow-btn">
+                        Δείτε
+                        <svg
+                          width="29"
+                          height="16"
+                          viewBox="0 0 29 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                            fill="#95deee"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- News-card end -->
+                </div>
+                <div class="swiper-slide">
+                  <!-- News-card start -->
+                  <div class="news-card">
+                    <div class="news-card__img-container">
+                      <img
+                        src="./assets/webp-img/agios_achillios_small.webp"
+                        alt="View of agios Achillios church"
+                        class="news-card__img"
+                      />
+                    </div>
+                    <div class="news-card__content">
+                      <h3 class="news-card__title">Τα νέα του δήμου μας</h3>
+                      <p class="news-card__text">
+                        Τα τελευταία χρόνια ωστόσο, καθώς η Πρέσπα έχει
+                        αναδειχθεί σε περιοχή διεθνούς ενδιαφέροντος,
+                        ενθαρρύνοντας την ανάπτυξη εναλλακτικών οικονομικών
+                        δραστηριοτήτων και μορφών τουρισμού.
+                      </p>
+
+                      <a href="#" class="news-card__link arrow-btn">
+                        Δείτε
+                        <svg
+                          width="29"
+                          height="16"
+                          viewBox="0 0 29 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                            fill="#95deee"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- News-card end -->
+                </div>
+                <div class="swiper-slide">
+                  <!-- News-card start -->
+                  <div class="news-card">
+                    <div class="news-card__img-container">
+                      <img
+                        src="./assets/webp-img/agios_achillios_small.webp"
+                        alt="View of agios Achillios church"
+                        class="news-card__img"
+                      />
+                    </div>
+                    <div class="news-card__content">
+                      <h3 class="news-card__title">Τα νέα του δήμου μας</h3>
+                      <p class="news-card__text">
+                        Τα τελευταία χρόνια ωστόσο, καθώς η Πρέσπα έχει
+                        αναδειχθεί σε περιοχή διεθνούς ενδιαφέροντος,
+                        ενθαρρύνοντας την ανάπτυξη εναλλακτικών οικονομικών
+                        δραστηριοτήτων και μορφών τουρισμού.
+                      </p>
+
+                      <a href="#" class="news-card__link arrow-btn">
+                        Δείτε
+                        <svg
+                          width="29"
+                          height="16"
+                          viewBox="0 0 29 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                            fill="#95deee"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- News-card end -->
+                </div>
+                <div class="swiper-slide">
+                  <!-- News-card start -->
+                  <div class="news-card">
+                    <div class="news-card__img-container">
+                      <img
+                        src="./assets/webp-img/agios_achillios_small.webp"
+                        alt="View of agios Achillios church"
+                        class="news-card__img"
+                      />
+                    </div>
+                    <div class="news-card__content">
+                      <h3 class="news-card__title">Τα νέα του δήμου μας</h3>
+                      <p class="news-card__text">
+                        Τα τελευταία χρόνια ωστόσο, καθώς η Πρέσπα έχει
+                        αναδειχθεί σε περιοχή διεθνούς ενδιαφέροντος,
+                        ενθαρρύνοντας την ανάπτυξη εναλλακτικών οικονομικών
+                        δραστηριοτήτων και μορφών τουρισμού.
+                      </p>
+
+                      <a href="#" class="news-card__link arrow-btn">
+                        Δείτε
+                        <svg
+                          width="29"
+                          height="16"
+                          viewBox="0 0 29 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                            fill="#95deee"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- News-card end -->
+                </div>
+                <div class="swiper-slide">
+                  <!-- News-card start -->
+                  <div class="news-card">
+                    <div class="news-card__img-container">
+                      <img
+                        src="./assets/webp-img/agios_achillios_small.webp"
+                        alt="View of agios Achillios church"
+                        class="news-card__img"
+                      />
+                    </div>
+                    <div class="news-card__content">
+                      <h3 class="news-card__title">Τα νέα του δήμου μας</h3>
+                      <p class="news-card__text">
+                        Τα τελευταία χρόνια ωστόσο, καθώς η Πρέσπα έχει
+                        αναδειχθεί σε περιοχή διεθνούς ενδιαφέροντος,
+                        ενθαρρύνοντας την ανάπτυξη εναλλακτικών οικονομικών
+                        δραστηριοτήτων και μορφών τουρισμού.
+                      </p>
+
+                      <a href="#" class="news-card__link arrow-btn">
+                        Δείτε
+                        <svg
+                          width="29"
+                          height="16"
+                          viewBox="0 0 29 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                            fill="#95deee"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <!-- News-card end -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Section button start -->
+          <a href="#" class="news__link section-btn"
+            >Δείτε τα όλα<svg
+              width="29"
+              height="16"
+              viewBox="0 0 29 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                fill="#ffffff"
+              />
+            </svg>
+          </a>
+          <!-- Section button end -->
+        </section>
+        <!-- News section end -->
+
+        <!-- Video-presenation section start -->
+        <section class="video-presentation home-container-center">
+          <div class="video">
+            <div class="video__overlay">
+              <h3 class="video__title">Μικρολίμνη</h3>
+              <div class="video__play-btn-container"></div>
+              <p class="video__text">
+                Από τη μια πλευρά τα δάση βελανιδιάς και κέδρου και από την άλλη
+                η απέραντη θέα στη Μικρή Πρέσπα. Η πρωινή ησυχία και η ξεχωριστή
+                ενέργεια του τοπίου λειτουργούν λυτρωτικά.
+              </p>
+            </div>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/L3JEGvtAXQo"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </section>
+        <!-- Video-presenation section end -->
+
+        <!-- Events section start -->
+        <section class="events home-container-right">
+          <h2 class="events__title">Εκδηλώσεις</h2>
+          <div class="events__btn-box slider-btn-box">
+            <div class="slider-btn-prev events__swiper-button-prev">
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.833293 13.9584L18.5812 13.9584L10.4291 22.1105L12.5 24.1667L24.1666 12.5001L12.5 0.833419L10.4437 2.88967L18.5812 11.0418L0.833293 11.0417L0.833293 13.9584Z"
+                  fill="#07116B"
+                />
+              </svg>
+            </div>
+            <div class="slider-btn-next events__swiper-button-next">
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.833293 13.9584L18.5812 13.9584L10.4291 22.1105L12.5 24.1667L24.1666 12.5001L12.5 0.833419L10.4437 2.88967L18.5812 11.0418L0.833293 11.0417L0.833293 13.9584Z"
+                  fill="#07116B"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div class="events__slider">
+            <div class="events__fader"></div>
+            <!-- Swiper -->
+            <div class="swiper events__swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="events-card events__slider-card">
+                    <img
+                      src="./assets/webp-img/events_img.webp"
+                      alt="Theatrical performance"
+                      class="events-card__img"
+                    />
+                    <div class="events-card__info">
+                      <p class="events-card__date">15/5/22 - 3/6/22</p>
+                      <h3 class="events-card__title">
+                        ΠΡΕΣΠΑthlon 2019 – The Bear’s Trail
+                      </h3>
+                      <div class="events-card__location-box">
+                        <svg
+                          class="events-card__location-icon"
+                          width="28"
+                          height="34"
+                          viewBox="0 0 28 34"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M14 17C12.1667 17 10.6667 15.5 10.6667 13.6666C10.6667 11.8333 12.1667 10.3333 14 10.3333C15.8334 10.3333 17.3334 11.8333 17.3334 13.6666C17.3334 15.5 15.8334 17 14 17ZM24 14C24 7.94998 19.5834 3.66665 14 3.66665C8.41669 3.66665 4.00002 7.94998 4.00002 14C4.00002 17.9 7.25002 23.0666 14 29.2333C20.75 23.0666 24 17.9 24 14ZM14 0.333313C21 0.333313 27.3334 5.69998 27.3334 14C27.3334 19.5333 22.8834 26.0833 14 33.6666C5.11669 26.0833 0.666687 19.5333 0.666687 14C0.666687 5.69998 7.00002 0.333313 14 0.333313Z"
+                            fill="#07116B"
+                          />
+                        </svg>
+                        <p class="events-card__location">Δήμος Πρεσπών</p>
+                      </div>
+                      <a href="#" class="events-card__link arrow-btn">
+                        Δείτε<svg
+                          width="29"
+                          height="16"
+                          viewBox="0 0 29 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                            fill="#95deee"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="events-card events__slider-card">
+                    <img
+                      src="./assets/webp-img/events_img.webp"
+                      alt="Theatrical performance"
+                      class="events-card__img"
+                    />
+                    <div class="events-card__info">
+                      <p class="events-card__date">15/5/22 - 3/6/22</p>
+                      <h3 class="events-card__title">
+                        ΠΡΕΣΠΑthlon 2019 – The Bear’s Trail
+                      </h3>
+                      <div class="events-card__location-box">
+                        <svg
+                          class="events-card__location-icon"
+                          width="28"
+                          height="34"
+                          viewBox="0 0 28 34"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M14 17C12.1667 17 10.6667 15.5 10.6667 13.6666C10.6667 11.8333 12.1667 10.3333 14 10.3333C15.8334 10.3333 17.3334 11.8333 17.3334 13.6666C17.3334 15.5 15.8334 17 14 17ZM24 14C24 7.94998 19.5834 3.66665 14 3.66665C8.41669 3.66665 4.00002 7.94998 4.00002 14C4.00002 17.9 7.25002 23.0666 14 29.2333C20.75 23.0666 24 17.9 24 14ZM14 0.333313C21 0.333313 27.3334 5.69998 27.3334 14C27.3334 19.5333 22.8834 26.0833 14 33.6666C5.11669 26.0833 0.666687 19.5333 0.666687 14C0.666687 5.69998 7.00002 0.333313 14 0.333313Z"
+                            fill="#07116B"
+                          />
+                        </svg>
+                        <p class="events-card__location">Δήμος Πρεσπών</p>
+                      </div>
+                      <a href="#" class="events-card__link arrow-btn">
+                        Δείτε<svg
+                          width="29"
+                          height="16"
+                          viewBox="0 0 29 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                            fill="#95deee"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="events-card events__slider-card">
+                    <img
+                      src="./assets/webp-img/events_img.webp"
+                      alt="Theatrical performance"
+                      class="events-card__img"
+                    />
+                    <div class="events-card__info">
+                      <p class="events-card__date">15/5/22 - 3/6/22</p>
+                      <h3 class="events-card__title">
+                        ΠΡΕΣΠΑthlon 2019 – The Bear’s Trail
+                      </h3>
+                      <div class="events-card__location-box">
+                        <svg
+                          class="events-card__location-icon"
+                          width="28"
+                          height="34"
+                          viewBox="0 0 28 34"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M14 17C12.1667 17 10.6667 15.5 10.6667 13.6666C10.6667 11.8333 12.1667 10.3333 14 10.3333C15.8334 10.3333 17.3334 11.8333 17.3334 13.6666C17.3334 15.5 15.8334 17 14 17ZM24 14C24 7.94998 19.5834 3.66665 14 3.66665C8.41669 3.66665 4.00002 7.94998 4.00002 14C4.00002 17.9 7.25002 23.0666 14 29.2333C20.75 23.0666 24 17.9 24 14ZM14 0.333313C21 0.333313 27.3334 5.69998 27.3334 14C27.3334 19.5333 22.8834 26.0833 14 33.6666C5.11669 26.0833 0.666687 19.5333 0.666687 14C0.666687 5.69998 7.00002 0.333313 14 0.333313Z"
+                            fill="#07116B"
+                          />
+                        </svg>
+                        <p class="events-card__location">Δήμος Πρεσπών</p>
+                      </div>
+                      <a href="#" class="events-card__link arrow-btn">
+                        Δείτε<svg
+                          width="29"
+                          height="16"
+                          viewBox="0 0 29 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                            fill="#95deee"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="events-card events__slider-card">
+                    <img
+                      src="./assets/webp-img/events_img.webp"
+                      alt="Theatrical performance"
+                      class="events-card__img"
+                    />
+                    <div class="events-card__info">
+                      <p class="events-card__date">15/5/22 - 3/6/22</p>
+                      <h3 class="events-card__title">
+                        ΠΡΕΣΠΑthlon 2019 – The Bear’s Trail
+                      </h3>
+                      <div class="events-card__location-box">
+                        <svg
+                          class="events-card__location-icon"
+                          width="28"
+                          height="34"
+                          viewBox="0 0 28 34"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M14 17C12.1667 17 10.6667 15.5 10.6667 13.6666C10.6667 11.8333 12.1667 10.3333 14 10.3333C15.8334 10.3333 17.3334 11.8333 17.3334 13.6666C17.3334 15.5 15.8334 17 14 17ZM24 14C24 7.94998 19.5834 3.66665 14 3.66665C8.41669 3.66665 4.00002 7.94998 4.00002 14C4.00002 17.9 7.25002 23.0666 14 29.2333C20.75 23.0666 24 17.9 24 14ZM14 0.333313C21 0.333313 27.3334 5.69998 27.3334 14C27.3334 19.5333 22.8834 26.0833 14 33.6666C5.11669 26.0833 0.666687 19.5333 0.666687 14C0.666687 5.69998 7.00002 0.333313 14 0.333313Z"
+                            fill="#07116B"
+                          />
+                        </svg>
+                        <p class="events-card__location">Δήμος Πρεσπών</p>
+                      </div>
+                      <a href="#" class="events-card__link arrow-btn">
+                        Δείτε<svg
+                          width="29"
+                          height="16"
+                          viewBox="0 0 29 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                            fill="#95deee"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="events-card events__slider-card">
+                    <img
+                      src="./assets/webp-img/events_img.webp"
+                      alt="Theatrical performance"
+                      class="events-card__img"
+                    />
+                    <div class="events-card__info">
+                      <p class="events-card__date">15/5/22 - 3/6/22</p>
+                      <h3 class="events-card__title">
+                        ΠΡΕΣΠΑthlon 2019 – The Bear’s Trail
+                      </h3>
+                      <div class="events-card__location-box">
+                        <svg
+                          class="events-card__location-icon"
+                          width="28"
+                          height="34"
+                          viewBox="0 0 28 34"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M14 17C12.1667 17 10.6667 15.5 10.6667 13.6666C10.6667 11.8333 12.1667 10.3333 14 10.3333C15.8334 10.3333 17.3334 11.8333 17.3334 13.6666C17.3334 15.5 15.8334 17 14 17ZM24 14C24 7.94998 19.5834 3.66665 14 3.66665C8.41669 3.66665 4.00002 7.94998 4.00002 14C4.00002 17.9 7.25002 23.0666 14 29.2333C20.75 23.0666 24 17.9 24 14ZM14 0.333313C21 0.333313 27.3334 5.69998 27.3334 14C27.3334 19.5333 22.8834 26.0833 14 33.6666C5.11669 26.0833 0.666687 19.5333 0.666687 14C0.666687 5.69998 7.00002 0.333313 14 0.333313Z"
+                            fill="#07116B"
+                          />
+                        </svg>
+                        <p class="events-card__location">Δήμος Πρεσπών</p>
+                      </div>
+                      <a href="#" class="events-card__link arrow-btn">
+                        Δείτε<svg
+                          width="29"
+                          height="16"
+                          viewBox="0 0 29 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                            fill="#95deee"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="events-card events__slider-card">
+                    <img
+                      src="./assets/webp-img/events_img.webp"
+                      alt="Theatrical performance"
+                      class="events-card__img"
+                    />
+                    <div class="events-card__info">
+                      <p class="events-card__date">15/5/22 - 3/6/22</p>
+                      <h3 class="events-card__title">
+                        ΠΡΕΣΠΑthlon 2019 – The Bear’s Trail
+                      </h3>
+                      <div class="events-card__location-box">
+                        <svg
+                          class="events-card__location-icon"
+                          width="28"
+                          height="34"
+                          viewBox="0 0 28 34"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M14 17C12.1667 17 10.6667 15.5 10.6667 13.6666C10.6667 11.8333 12.1667 10.3333 14 10.3333C15.8334 10.3333 17.3334 11.8333 17.3334 13.6666C17.3334 15.5 15.8334 17 14 17ZM24 14C24 7.94998 19.5834 3.66665 14 3.66665C8.41669 3.66665 4.00002 7.94998 4.00002 14C4.00002 17.9 7.25002 23.0666 14 29.2333C20.75 23.0666 24 17.9 24 14ZM14 0.333313C21 0.333313 27.3334 5.69998 27.3334 14C27.3334 19.5333 22.8834 26.0833 14 33.6666C5.11669 26.0833 0.666687 19.5333 0.666687 14C0.666687 5.69998 7.00002 0.333313 14 0.333313Z"
+                            fill="#07116B"
+                          />
+                        </svg>
+                        <p class="events-card__location">Δήμος Πρεσπών</p>
+                      </div>
+                      <a href="#" class="events-card__link arrow-btn">
+                        Δείτε<svg
+                          width="29"
+                          height="16"
+                          viewBox="0 0 29 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                            fill="#95deee"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="events-card events__slider-card">
+                    <img
+                      src="./assets/webp-img/events_img.webp"
+                      alt="Theatrical performance"
+                      class="events-card__img"
+                    />
+                    <div class="events-card__info">
+                      <p class="events-card__date">15/5/22 - 3/6/22</p>
+                      <h3 class="events-card__title">
+                        ΠΡΕΣΠΑthlon 2019 – The Bear’s Trail
+                      </h3>
+                      <div class="events-card__location-box">
+                        <svg
+                          class="events-card__location-icon"
+                          width="28"
+                          height="34"
+                          viewBox="0 0 28 34"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M14 17C12.1667 17 10.6667 15.5 10.6667 13.6666C10.6667 11.8333 12.1667 10.3333 14 10.3333C15.8334 10.3333 17.3334 11.8333 17.3334 13.6666C17.3334 15.5 15.8334 17 14 17ZM24 14C24 7.94998 19.5834 3.66665 14 3.66665C8.41669 3.66665 4.00002 7.94998 4.00002 14C4.00002 17.9 7.25002 23.0666 14 29.2333C20.75 23.0666 24 17.9 24 14ZM14 0.333313C21 0.333313 27.3334 5.69998 27.3334 14C27.3334 19.5333 22.8834 26.0833 14 33.6666C5.11669 26.0833 0.666687 19.5333 0.666687 14C0.666687 5.69998 7.00002 0.333313 14 0.333313Z"
+                            fill="#07116B"
+                          />
+                        </svg>
+                        <p class="events-card__location">Δήμος Πρεσπών</p>
+                      </div>
+                      <a href="#" class="events-card__link arrow-btn">
+                        Δείτε<svg
+                          width="29"
+                          height="16"
+                          viewBox="0 0 29 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                            fill="#95deee"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="events-card events__slider-card">
+                    <img
+                      src="./assets/webp-img/events_img.webp"
+                      alt="Theatrical performance"
+                      class="events-card__img"
+                    />
+                    <div class="events-card__info">
+                      <p class="events-card__date">15/5/22 - 3/6/22</p>
+                      <h3 class="events-card__title">
+                        ΠΡΕΣΠΑthlon 2019 – The Bear’s Trail
+                      </h3>
+                      <div class="events-card__location-box">
+                        <svg
+                          class="events-card__location-icon"
+                          width="28"
+                          height="34"
+                          viewBox="0 0 28 34"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M14 17C12.1667 17 10.6667 15.5 10.6667 13.6666C10.6667 11.8333 12.1667 10.3333 14 10.3333C15.8334 10.3333 17.3334 11.8333 17.3334 13.6666C17.3334 15.5 15.8334 17 14 17ZM24 14C24 7.94998 19.5834 3.66665 14 3.66665C8.41669 3.66665 4.00002 7.94998 4.00002 14C4.00002 17.9 7.25002 23.0666 14 29.2333C20.75 23.0666 24 17.9 24 14ZM14 0.333313C21 0.333313 27.3334 5.69998 27.3334 14C27.3334 19.5333 22.8834 26.0833 14 33.6666C5.11669 26.0833 0.666687 19.5333 0.666687 14C0.666687 5.69998 7.00002 0.333313 14 0.333313Z"
+                            fill="#07116B"
+                          />
+                        </svg>
+                        <p class="events-card__location">Δήμος Πρεσπών</p>
+                      </div>
+                      <a href="#" class="events-card__link arrow-btn">
+                        Δείτε<svg
+                          width="29"
+                          height="16"
+                          viewBox="0 0 29 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                            fill="#95deee"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Section button start -->
+          <a href="#" class="events__link section-btn"
+            >Δείτε τα όλα<svg
+              width="29"
+              height="16"
+              viewBox="0 0 29 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M28.7071 8.70711C29.0976 8.31659 29.0976 7.68342 28.7071 7.2929L22.3431 0.928934C21.9526 0.53841 21.3195 0.53841 20.9289 0.928934C20.5384 1.31946 20.5384 1.95262 20.9289 2.34315L26.5858 8L20.9289 13.6569C20.5384 14.0474 20.5384 14.6805 20.9289 15.0711C21.3195 15.4616 21.9526 15.4616 22.3431 15.0711L28.7071 8.70711ZM-8.74228e-08 9L28 9L28 7L8.74228e-08 7L-8.74228e-08 9Z"
+                fill="#ffffff"
+              />
+            </svg>
+          </a>
+          <!-- Section button end -->
+        </section>
+        <!-- Events section end -->
+
+        <!-- Newsletter section start -->
+        <section class="newsletter home-container-center">
+          <div class="newsletter__content-wrapper">
+            <h2 class="newsletter__title">Εγγραφή στο newsletter</h2>
+            <form action="" class="newsletter__form">
+              <div class="newsletter__input-wrapper">
+                <!-- <label class="newsletter__label" for="newsletter-name"
+                  >Name</label
+                > -->
+                <input
+                  type="text"
+                  class="newsletter__input"
+                  id="newsletter-name"
+                  placeholder="Joe Doe"
+                />
+                <!-- <label class="newsletter__label" for="newsletter-email"
+                  >Email</label
+                > -->
+                <input
+                  type="email"
+                  class="newsletter__input"
+                  id="newsletter-email"
+                  placeholder="joedoe@email.com"
+                />
+              </div>
+              <p class="newsletter__policy">
+                By signing up, you consent to regularly receiving Prespes
+                newsletter per email with Prespes travel news, articles about
+                upcoming events, new attractions, questionnaires and special
+                offers as well as invitations to participate in competitions.
+                See Prespes Data Protection Notice in regard to the processing
+                of your data. At any time, you can withdraw consent by clicking
+                ‘Unsubscribe’ in the footer of the newsletter.
+              </p>
+              <button type="submit" class="newsletter__btn">Sign up</button>
+            </form>
+          </div>
+        </section>
+        <!-- Newsletter section end -->
+
+        <!-- Trip-planner section start -->
+        <section class="trip-planner home-container-center">
+          <h2 class="trip-planner__title">Σχεδιάστε το ταξίδι σας</h2>
+          <div class="trip-planner__info-box">
+            <!-- Trip-planner-card start -->
+            <div class="trip-planner-card">
+              <div class="trip-planner-card__icon-box">
+                <svg
+                  class="trip-planner-card__icon--1"
+                  width="85"
+                  height="85"
+                  viewBox="0 0 85 85"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M42.5 0.583252C21.3334 0.583252 0.166687 3.22909 0.166687 21.7499V72.0208C0.166687 82.2337 8.4746 90.5416 18.6875 90.5416L10.75 98.4791V101.125H21.3334L31.9167 90.5416H53.0833L63.6667 101.125H74.25V98.4791L66.3125 90.5416C76.5254 90.5416 84.8333 82.2337 84.8333 72.0208V21.7499C84.8333 3.22909 63.6667 0.583252 42.5 0.583252ZM42.5 11.1666C61.0738 11.1666 68.7467 13.7066 71.9746 16.4583H13.0254C16.2534 13.7066 23.9263 11.1666 42.5 11.1666ZM10.75 27.0416H37.2084V42.9166H10.75V27.0416ZM74.25 72.0208C74.25 76.4128 70.7046 79.9583 66.3125 79.9583H18.6875C14.2954 79.9583 10.75 76.4128 10.75 72.0208V53.4999H74.25V72.0208ZM74.25 42.9166H47.7917V27.0416H74.25V42.9166Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <h3 class="trip-planner-card__title">Πώς θα έρθετε</h3>
+            </div>
+            <!-- Trip-planner-card end -->
+            <!-- Trip-planner-card start -->
+            <div class="trip-planner-card">
+              <div class="trip-planner-card__icon-box">
+                <svg
+                  class="trip-planner-card__icon--2"
+                  width="111"
+                  height="94"
+                  viewBox="0 0 111 94"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M93.7083 34.7625V5.83333H77.3333V20.025L55.5 0.375L0.916672 49.5H17.2917V93.1667H50.0417V60.4167H60.9583V93.1667H93.7083V49.5H110.083L93.7083 34.7625ZM82.7917 82.25H71.875V49.5H39.125V82.25H28.2083V39.6204L55.5 15.0579L82.7917 39.6204V82.25Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <h3 class="trip-planner-card__title">Πού θα μείνετε</h3>
+            </div>
+            <!-- Trip-planner-card end -->
+            <!-- Trip-planner-card start -->
+            <div class="trip-planner-card">
+              <div class="trip-planner-card__icon-box">
+                <svg
+                  class="trip-planner-card__icon--3"
+                  width="88"
+                  height="89"
+                  viewBox="0 0 88 89"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M85.0833 0.625L84.31 0.77125L58.5 10.8625L29.5 0.625L2.24 9.8875C1.225 10.2288 0.5 11.1063 0.5 12.2275V85.9375C0.5 87.3025 1.56333 88.375 2.91667 88.375L3.69 88.2287L29.5 78.1375L58.5 88.375L85.76 79.1125C86.775 78.7713 87.5 77.8938 87.5 76.7725V3.0625C87.5 1.6975 86.4367 0.625 85.0833 0.625ZM34.3333 12.6662L53.6667 19.4912V76.3338L34.3333 69.5087V12.6662ZM10.1667 17.4925L24.6667 12.5687V69.6062L10.1667 75.2612V17.4925ZM77.8333 71.5075L63.3333 76.4312V19.4425L77.8333 13.7875V71.5075Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <h3 class="trip-planner-card__title">Χάρτης</h3>
+            </div>
+            <!-- Trip-planner-card end -->
+            <!-- Trip-planner-card start -->
+            <div class="trip-planner-card">
+              <div class="trip-planner-card__icon-box">
+                <svg
+                  class="trip-planner-card__icon--4"
+                  width="98"
+                  height="98"
+                  viewBox="0 0 98 98"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M44.1667 73.1668H53.8334V44.1668H44.1667V73.1668ZM49 0.666748C22.32 0.666748 0.666687 22.3201 0.666687 49.0001C0.666687 75.6801 22.32 97.3334 49 97.3334C75.68 97.3334 97.3334 75.6801 97.3334 49.0001C97.3334 22.3201 75.68 0.666748 49 0.666748ZM49 87.6668C27.685 87.6668 10.3334 70.3151 10.3334 49.0001C10.3334 27.6851 27.685 10.3334 49 10.3334C70.315 10.3334 87.6667 27.6851 87.6667 49.0001C87.6667 70.3151 70.315 87.6668 49 87.6668ZM44.1667 34.5001H53.8334V24.8334H44.1667V34.5001Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <h3 class="trip-planner-card__title">Πληροφορίες</h3>
+            </div>
+            <!-- Trip-planner-card end -->
+          </div>
+        </section>
+        <!-- Trip-planner section end -->
+
+        <!-- Follow-us section start -->
+        <section class="follow home-container-center">
+          <h2 class="follow__title">Ακολουθήστε μας</h2>
+          <div class="follow__content-box">
+            <!-- Follow-card start -->
+            <div class="follow-card follow-card--1">
+              <svg
+                class="follow-card__icon"
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_149_308)">
+                  <path
+                    d="M27.9734 8.23208C27.9079 6.74433 27.6673 5.72152 27.3226 4.83523C26.9671 3.89447 26.4201 3.0522 25.7035 2.35202C25.0033 1.64095 24.1555 1.08841 23.2256 0.738425C22.3342 0.393784 21.3167 0.153198 19.829 0.0876025C18.3301 0.0164522 17.8543 0 14.0528 0C10.2513 0 9.77542 0.0164522 8.28212 0.0820473C6.79437 0.147642 5.77156 0.388443 4.88549 0.73287C3.94451 1.08841 3.10225 1.63539 2.40207 2.35202C1.69099 3.0522 1.13867 3.90002 0.788474 4.82989C0.443833 5.72152 0.203246 6.73877 0.137651 8.22652C0.066501 9.72538 0.0500488 10.2012 0.0500488 14.0027C0.0500488 17.8043 0.066501 18.2801 0.132096 19.7734C0.197691 21.2611 0.438491 22.284 0.783132 23.1702C1.13867 24.111 1.69099 24.9533 2.40207 25.6534C3.10225 26.3645 3.95007 26.9171 4.87994 27.267C5.77156 27.6117 6.78882 27.8523 8.27678 27.9179C9.76987 27.9837 10.2459 27.9999 14.0474 27.9999C17.849 27.9999 18.3248 27.9837 19.8181 27.9179C21.3058 27.8523 22.3286 27.6117 23.2147 27.267C25.0965 26.5395 26.5842 25.0518 27.3117 23.1702C27.6562 22.2786 27.897 21.2611 27.9626 19.7734C28.0281 18.2801 28.0446 17.8043 28.0446 14.0027C28.0446 10.2012 28.039 9.72538 27.9734 8.23208ZM25.452 19.664C25.3917 21.0315 25.1621 21.7699 24.9706 22.2622C24.5001 23.482 23.532 24.4501 22.3122 24.9206C21.8199 25.112 21.0761 25.3417 19.714 25.4017C18.2372 25.4676 17.7943 25.4838 14.0583 25.4838C10.3224 25.4838 9.87392 25.4676 8.40241 25.4017C7.03496 25.3417 6.29653 25.112 5.80425 24.9206C5.19723 24.6962 4.64469 24.3407 4.19621 23.8758C3.73128 23.4217 3.37574 22.8747 3.15139 22.2677C2.95995 21.7754 2.73026 21.0315 2.67022 19.6696C2.60441 18.1927 2.58817 17.7496 2.58817 14.0136C2.58817 10.2777 2.60441 9.82922 2.67022 8.35792C2.73026 6.99047 2.95995 6.25204 3.15139 5.75976C3.37574 5.15253 3.73128 4.6002 4.20177 4.15151C4.65559 3.68657 5.20257 3.33103 5.80981 3.1069C6.30209 2.91546 7.04607 2.68577 8.40797 2.62551C9.88482 2.55992 10.328 2.54347 14.0637 2.54347C17.8052 2.54347 18.2481 2.55992 19.7196 2.62551C21.087 2.68577 21.8255 2.91546 22.3177 3.1069C22.9248 3.33103 23.4773 3.68657 23.9258 4.15151C24.3907 4.60554 24.7463 5.15253 24.9706 5.75976C25.1621 6.25204 25.3917 6.99581 25.452 8.35792C25.5176 9.83478 25.534 10.2777 25.534 14.0136C25.534 17.7496 25.5176 18.1871 25.452 19.664Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M14.0519 6.80981C10.081 6.80981 6.85913 10.0315 6.85913 14.0026C6.85913 17.9738 10.081 21.1954 14.0519 21.1954C18.0231 21.1954 21.2448 17.9738 21.2448 14.0026C21.2448 10.0315 18.0231 6.80981 14.0519 6.80981ZM14.0519 18.6684C11.4758 18.6684 9.38614 16.579 9.38614 14.0026C9.38614 11.4263 11.4758 9.33683 14.0519 9.33683C16.6283 9.33683 18.7177 11.4263 18.7177 14.0026C18.7177 16.579 16.6283 18.6684 14.0519 18.6684Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M23.2085 6.52539C23.2085 7.45269 22.4566 8.20458 21.5291 8.20458C20.6018 8.20458 19.8499 7.45269 19.8499 6.52539C19.8499 5.59787 20.6018 4.84619 21.5291 4.84619C22.4566 4.84619 23.2085 5.59787 23.2085 6.52539Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_149_308">
+                    <rect width="28" height="28" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <p class="follow-card__text">Βιδρονήσι</p>
+              <div class="follow-card__overlay"></div>
+            </div>
+            <!-- Follow-card end -->
+            <!-- Follow-card start -->
+            <div class="follow-card follow-card--2">
+              <svg
+                class="follow-card__icon"
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_149_308)">
+                  <path
+                    d="M27.9734 8.23208C27.9079 6.74433 27.6673 5.72152 27.3226 4.83523C26.9671 3.89447 26.4201 3.0522 25.7035 2.35202C25.0033 1.64095 24.1555 1.08841 23.2256 0.738425C22.3342 0.393784 21.3167 0.153198 19.829 0.0876025C18.3301 0.0164522 17.8543 0 14.0528 0C10.2513 0 9.77542 0.0164522 8.28212 0.0820473C6.79437 0.147642 5.77156 0.388443 4.88549 0.73287C3.94451 1.08841 3.10225 1.63539 2.40207 2.35202C1.69099 3.0522 1.13867 3.90002 0.788474 4.82989C0.443833 5.72152 0.203246 6.73877 0.137651 8.22652C0.066501 9.72538 0.0500488 10.2012 0.0500488 14.0027C0.0500488 17.8043 0.066501 18.2801 0.132096 19.7734C0.197691 21.2611 0.438491 22.284 0.783132 23.1702C1.13867 24.111 1.69099 24.9533 2.40207 25.6534C3.10225 26.3645 3.95007 26.9171 4.87994 27.267C5.77156 27.6117 6.78882 27.8523 8.27678 27.9179C9.76987 27.9837 10.2459 27.9999 14.0474 27.9999C17.849 27.9999 18.3248 27.9837 19.8181 27.9179C21.3058 27.8523 22.3286 27.6117 23.2147 27.267C25.0965 26.5395 26.5842 25.0518 27.3117 23.1702C27.6562 22.2786 27.897 21.2611 27.9626 19.7734C28.0281 18.2801 28.0446 17.8043 28.0446 14.0027C28.0446 10.2012 28.039 9.72538 27.9734 8.23208ZM25.452 19.664C25.3917 21.0315 25.1621 21.7699 24.9706 22.2622C24.5001 23.482 23.532 24.4501 22.3122 24.9206C21.8199 25.112 21.0761 25.3417 19.714 25.4017C18.2372 25.4676 17.7943 25.4838 14.0583 25.4838C10.3224 25.4838 9.87392 25.4676 8.40241 25.4017C7.03496 25.3417 6.29653 25.112 5.80425 24.9206C5.19723 24.6962 4.64469 24.3407 4.19621 23.8758C3.73128 23.4217 3.37574 22.8747 3.15139 22.2677C2.95995 21.7754 2.73026 21.0315 2.67022 19.6696C2.60441 18.1927 2.58817 17.7496 2.58817 14.0136C2.58817 10.2777 2.60441 9.82922 2.67022 8.35792C2.73026 6.99047 2.95995 6.25204 3.15139 5.75976C3.37574 5.15253 3.73128 4.6002 4.20177 4.15151C4.65559 3.68657 5.20257 3.33103 5.80981 3.1069C6.30209 2.91546 7.04607 2.68577 8.40797 2.62551C9.88482 2.55992 10.328 2.54347 14.0637 2.54347C17.8052 2.54347 18.2481 2.55992 19.7196 2.62551C21.087 2.68577 21.8255 2.91546 22.3177 3.1069C22.9248 3.33103 23.4773 3.68657 23.9258 4.15151C24.3907 4.60554 24.7463 5.15253 24.9706 5.75976C25.1621 6.25204 25.3917 6.99581 25.452 8.35792C25.5176 9.83478 25.534 10.2777 25.534 14.0136C25.534 17.7496 25.5176 18.1871 25.452 19.664Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M14.0519 6.80981C10.081 6.80981 6.85913 10.0315 6.85913 14.0026C6.85913 17.9738 10.081 21.1954 14.0519 21.1954C18.0231 21.1954 21.2448 17.9738 21.2448 14.0026C21.2448 10.0315 18.0231 6.80981 14.0519 6.80981ZM14.0519 18.6684C11.4758 18.6684 9.38614 16.579 9.38614 14.0026C9.38614 11.4263 11.4758 9.33683 14.0519 9.33683C16.6283 9.33683 18.7177 11.4263 18.7177 14.0026C18.7177 16.579 16.6283 18.6684 14.0519 18.6684Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M23.2085 6.52539C23.2085 7.45269 22.4566 8.20458 21.5291 8.20458C20.6018 8.20458 19.8499 7.45269 19.8499 6.52539C19.8499 5.59787 20.6018 4.84619 21.5291 4.84619C22.4566 4.84619 23.2085 5.59787 23.2085 6.52539Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_149_308">
+                    <rect width="28" height="28" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <p class="follow-card__text">Βιδρονήσι</p>
+              <div class="follow-card__overlay"></div>
+            </div>
+            <!-- Follow-card end -->
+            <!-- Follow-card start -->
+            <div class="follow-card follow-card--3">
+              <svg
+                class="follow-card__icon"
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_149_308)">
+                  <path
+                    d="M27.9734 8.23208C27.9079 6.74433 27.6673 5.72152 27.3226 4.83523C26.9671 3.89447 26.4201 3.0522 25.7035 2.35202C25.0033 1.64095 24.1555 1.08841 23.2256 0.738425C22.3342 0.393784 21.3167 0.153198 19.829 0.0876025C18.3301 0.0164522 17.8543 0 14.0528 0C10.2513 0 9.77542 0.0164522 8.28212 0.0820473C6.79437 0.147642 5.77156 0.388443 4.88549 0.73287C3.94451 1.08841 3.10225 1.63539 2.40207 2.35202C1.69099 3.0522 1.13867 3.90002 0.788474 4.82989C0.443833 5.72152 0.203246 6.73877 0.137651 8.22652C0.066501 9.72538 0.0500488 10.2012 0.0500488 14.0027C0.0500488 17.8043 0.066501 18.2801 0.132096 19.7734C0.197691 21.2611 0.438491 22.284 0.783132 23.1702C1.13867 24.111 1.69099 24.9533 2.40207 25.6534C3.10225 26.3645 3.95007 26.9171 4.87994 27.267C5.77156 27.6117 6.78882 27.8523 8.27678 27.9179C9.76987 27.9837 10.2459 27.9999 14.0474 27.9999C17.849 27.9999 18.3248 27.9837 19.8181 27.9179C21.3058 27.8523 22.3286 27.6117 23.2147 27.267C25.0965 26.5395 26.5842 25.0518 27.3117 23.1702C27.6562 22.2786 27.897 21.2611 27.9626 19.7734C28.0281 18.2801 28.0446 17.8043 28.0446 14.0027C28.0446 10.2012 28.039 9.72538 27.9734 8.23208ZM25.452 19.664C25.3917 21.0315 25.1621 21.7699 24.9706 22.2622C24.5001 23.482 23.532 24.4501 22.3122 24.9206C21.8199 25.112 21.0761 25.3417 19.714 25.4017C18.2372 25.4676 17.7943 25.4838 14.0583 25.4838C10.3224 25.4838 9.87392 25.4676 8.40241 25.4017C7.03496 25.3417 6.29653 25.112 5.80425 24.9206C5.19723 24.6962 4.64469 24.3407 4.19621 23.8758C3.73128 23.4217 3.37574 22.8747 3.15139 22.2677C2.95995 21.7754 2.73026 21.0315 2.67022 19.6696C2.60441 18.1927 2.58817 17.7496 2.58817 14.0136C2.58817 10.2777 2.60441 9.82922 2.67022 8.35792C2.73026 6.99047 2.95995 6.25204 3.15139 5.75976C3.37574 5.15253 3.73128 4.6002 4.20177 4.15151C4.65559 3.68657 5.20257 3.33103 5.80981 3.1069C6.30209 2.91546 7.04607 2.68577 8.40797 2.62551C9.88482 2.55992 10.328 2.54347 14.0637 2.54347C17.8052 2.54347 18.2481 2.55992 19.7196 2.62551C21.087 2.68577 21.8255 2.91546 22.3177 3.1069C22.9248 3.33103 23.4773 3.68657 23.9258 4.15151C24.3907 4.60554 24.7463 5.15253 24.9706 5.75976C25.1621 6.25204 25.3917 6.99581 25.452 8.35792C25.5176 9.83478 25.534 10.2777 25.534 14.0136C25.534 17.7496 25.5176 18.1871 25.452 19.664Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M14.0519 6.80981C10.081 6.80981 6.85913 10.0315 6.85913 14.0026C6.85913 17.9738 10.081 21.1954 14.0519 21.1954C18.0231 21.1954 21.2448 17.9738 21.2448 14.0026C21.2448 10.0315 18.0231 6.80981 14.0519 6.80981ZM14.0519 18.6684C11.4758 18.6684 9.38614 16.579 9.38614 14.0026C9.38614 11.4263 11.4758 9.33683 14.0519 9.33683C16.6283 9.33683 18.7177 11.4263 18.7177 14.0026C18.7177 16.579 16.6283 18.6684 14.0519 18.6684Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M23.2085 6.52539C23.2085 7.45269 22.4566 8.20458 21.5291 8.20458C20.6018 8.20458 19.8499 7.45269 19.8499 6.52539C19.8499 5.59787 20.6018 4.84619 21.5291 4.84619C22.4566 4.84619 23.2085 5.59787 23.2085 6.52539Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_149_308">
+                    <rect width="28" height="28" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <p class="follow-card__text">Βιδρονήσι</p>
+              <div class="follow-card__overlay"></div>
+            </div>
+            <!-- Follow-card end -->
+            <!-- Follow-card start -->
+            <div class="follow-card follow-card--4">
+              <svg
+                class="follow-card__icon"
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_149_308)">
+                  <path
+                    d="M27.9734 8.23208C27.9079 6.74433 27.6673 5.72152 27.3226 4.83523C26.9671 3.89447 26.4201 3.0522 25.7035 2.35202C25.0033 1.64095 24.1555 1.08841 23.2256 0.738425C22.3342 0.393784 21.3167 0.153198 19.829 0.0876025C18.3301 0.0164522 17.8543 0 14.0528 0C10.2513 0 9.77542 0.0164522 8.28212 0.0820473C6.79437 0.147642 5.77156 0.388443 4.88549 0.73287C3.94451 1.08841 3.10225 1.63539 2.40207 2.35202C1.69099 3.0522 1.13867 3.90002 0.788474 4.82989C0.443833 5.72152 0.203246 6.73877 0.137651 8.22652C0.066501 9.72538 0.0500488 10.2012 0.0500488 14.0027C0.0500488 17.8043 0.066501 18.2801 0.132096 19.7734C0.197691 21.2611 0.438491 22.284 0.783132 23.1702C1.13867 24.111 1.69099 24.9533 2.40207 25.6534C3.10225 26.3645 3.95007 26.9171 4.87994 27.267C5.77156 27.6117 6.78882 27.8523 8.27678 27.9179C9.76987 27.9837 10.2459 27.9999 14.0474 27.9999C17.849 27.9999 18.3248 27.9837 19.8181 27.9179C21.3058 27.8523 22.3286 27.6117 23.2147 27.267C25.0965 26.5395 26.5842 25.0518 27.3117 23.1702C27.6562 22.2786 27.897 21.2611 27.9626 19.7734C28.0281 18.2801 28.0446 17.8043 28.0446 14.0027C28.0446 10.2012 28.039 9.72538 27.9734 8.23208ZM25.452 19.664C25.3917 21.0315 25.1621 21.7699 24.9706 22.2622C24.5001 23.482 23.532 24.4501 22.3122 24.9206C21.8199 25.112 21.0761 25.3417 19.714 25.4017C18.2372 25.4676 17.7943 25.4838 14.0583 25.4838C10.3224 25.4838 9.87392 25.4676 8.40241 25.4017C7.03496 25.3417 6.29653 25.112 5.80425 24.9206C5.19723 24.6962 4.64469 24.3407 4.19621 23.8758C3.73128 23.4217 3.37574 22.8747 3.15139 22.2677C2.95995 21.7754 2.73026 21.0315 2.67022 19.6696C2.60441 18.1927 2.58817 17.7496 2.58817 14.0136C2.58817 10.2777 2.60441 9.82922 2.67022 8.35792C2.73026 6.99047 2.95995 6.25204 3.15139 5.75976C3.37574 5.15253 3.73128 4.6002 4.20177 4.15151C4.65559 3.68657 5.20257 3.33103 5.80981 3.1069C6.30209 2.91546 7.04607 2.68577 8.40797 2.62551C9.88482 2.55992 10.328 2.54347 14.0637 2.54347C17.8052 2.54347 18.2481 2.55992 19.7196 2.62551C21.087 2.68577 21.8255 2.91546 22.3177 3.1069C22.9248 3.33103 23.4773 3.68657 23.9258 4.15151C24.3907 4.60554 24.7463 5.15253 24.9706 5.75976C25.1621 6.25204 25.3917 6.99581 25.452 8.35792C25.5176 9.83478 25.534 10.2777 25.534 14.0136C25.534 17.7496 25.5176 18.1871 25.452 19.664Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M14.0519 6.80981C10.081 6.80981 6.85913 10.0315 6.85913 14.0026C6.85913 17.9738 10.081 21.1954 14.0519 21.1954C18.0231 21.1954 21.2448 17.9738 21.2448 14.0026C21.2448 10.0315 18.0231 6.80981 14.0519 6.80981ZM14.0519 18.6684C11.4758 18.6684 9.38614 16.579 9.38614 14.0026C9.38614 11.4263 11.4758 9.33683 14.0519 9.33683C16.6283 9.33683 18.7177 11.4263 18.7177 14.0026C18.7177 16.579 16.6283 18.6684 14.0519 18.6684Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M23.2085 6.52539C23.2085 7.45269 22.4566 8.20458 21.5291 8.20458C20.6018 8.20458 19.8499 7.45269 19.8499 6.52539C19.8499 5.59787 20.6018 4.84619 21.5291 4.84619C22.4566 4.84619 23.2085 5.59787 23.2085 6.52539Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_149_308">
+                    <rect width="28" height="28" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <p class="follow-card__text">Βιδρονήσι</p>
+              <div class="follow-card__overlay"></div>
+            </div>
+            <!-- Follow-card end -->
+            <!-- Follow-card start -->
+            <div class="follow-card follow-card--5">
+              <svg
+                class="follow-card__icon"
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_149_308)">
+                  <path
+                    d="M27.9734 8.23208C27.9079 6.74433 27.6673 5.72152 27.3226 4.83523C26.9671 3.89447 26.4201 3.0522 25.7035 2.35202C25.0033 1.64095 24.1555 1.08841 23.2256 0.738425C22.3342 0.393784 21.3167 0.153198 19.829 0.0876025C18.3301 0.0164522 17.8543 0 14.0528 0C10.2513 0 9.77542 0.0164522 8.28212 0.0820473C6.79437 0.147642 5.77156 0.388443 4.88549 0.73287C3.94451 1.08841 3.10225 1.63539 2.40207 2.35202C1.69099 3.0522 1.13867 3.90002 0.788474 4.82989C0.443833 5.72152 0.203246 6.73877 0.137651 8.22652C0.066501 9.72538 0.0500488 10.2012 0.0500488 14.0027C0.0500488 17.8043 0.066501 18.2801 0.132096 19.7734C0.197691 21.2611 0.438491 22.284 0.783132 23.1702C1.13867 24.111 1.69099 24.9533 2.40207 25.6534C3.10225 26.3645 3.95007 26.9171 4.87994 27.267C5.77156 27.6117 6.78882 27.8523 8.27678 27.9179C9.76987 27.9837 10.2459 27.9999 14.0474 27.9999C17.849 27.9999 18.3248 27.9837 19.8181 27.9179C21.3058 27.8523 22.3286 27.6117 23.2147 27.267C25.0965 26.5395 26.5842 25.0518 27.3117 23.1702C27.6562 22.2786 27.897 21.2611 27.9626 19.7734C28.0281 18.2801 28.0446 17.8043 28.0446 14.0027C28.0446 10.2012 28.039 9.72538 27.9734 8.23208ZM25.452 19.664C25.3917 21.0315 25.1621 21.7699 24.9706 22.2622C24.5001 23.482 23.532 24.4501 22.3122 24.9206C21.8199 25.112 21.0761 25.3417 19.714 25.4017C18.2372 25.4676 17.7943 25.4838 14.0583 25.4838C10.3224 25.4838 9.87392 25.4676 8.40241 25.4017C7.03496 25.3417 6.29653 25.112 5.80425 24.9206C5.19723 24.6962 4.64469 24.3407 4.19621 23.8758C3.73128 23.4217 3.37574 22.8747 3.15139 22.2677C2.95995 21.7754 2.73026 21.0315 2.67022 19.6696C2.60441 18.1927 2.58817 17.7496 2.58817 14.0136C2.58817 10.2777 2.60441 9.82922 2.67022 8.35792C2.73026 6.99047 2.95995 6.25204 3.15139 5.75976C3.37574 5.15253 3.73128 4.6002 4.20177 4.15151C4.65559 3.68657 5.20257 3.33103 5.80981 3.1069C6.30209 2.91546 7.04607 2.68577 8.40797 2.62551C9.88482 2.55992 10.328 2.54347 14.0637 2.54347C17.8052 2.54347 18.2481 2.55992 19.7196 2.62551C21.087 2.68577 21.8255 2.91546 22.3177 3.1069C22.9248 3.33103 23.4773 3.68657 23.9258 4.15151C24.3907 4.60554 24.7463 5.15253 24.9706 5.75976C25.1621 6.25204 25.3917 6.99581 25.452 8.35792C25.5176 9.83478 25.534 10.2777 25.534 14.0136C25.534 17.7496 25.5176 18.1871 25.452 19.664Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M14.0519 6.80981C10.081 6.80981 6.85913 10.0315 6.85913 14.0026C6.85913 17.9738 10.081 21.1954 14.0519 21.1954C18.0231 21.1954 21.2448 17.9738 21.2448 14.0026C21.2448 10.0315 18.0231 6.80981 14.0519 6.80981ZM14.0519 18.6684C11.4758 18.6684 9.38614 16.579 9.38614 14.0026C9.38614 11.4263 11.4758 9.33683 14.0519 9.33683C16.6283 9.33683 18.7177 11.4263 18.7177 14.0026C18.7177 16.579 16.6283 18.6684 14.0519 18.6684Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M23.2085 6.52539C23.2085 7.45269 22.4566 8.20458 21.5291 8.20458C20.6018 8.20458 19.8499 7.45269 19.8499 6.52539C19.8499 5.59787 20.6018 4.84619 21.5291 4.84619C22.4566 4.84619 23.2085 5.59787 23.2085 6.52539Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_149_308">
+                    <rect width="28" height="28" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <p class="follow-card__text">Βιδρονήσι</p>
+              <div class="follow-card__overlay"></div>
+            </div>
+            <!-- Follow-card end -->
+            <!-- Follow-card start -->
+            <div class="follow-card follow-card--6">
+              <svg
+                class="follow-card__icon"
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_149_308)">
+                  <path
+                    d="M27.9734 8.23208C27.9079 6.74433 27.6673 5.72152 27.3226 4.83523C26.9671 3.89447 26.4201 3.0522 25.7035 2.35202C25.0033 1.64095 24.1555 1.08841 23.2256 0.738425C22.3342 0.393784 21.3167 0.153198 19.829 0.0876025C18.3301 0.0164522 17.8543 0 14.0528 0C10.2513 0 9.77542 0.0164522 8.28212 0.0820473C6.79437 0.147642 5.77156 0.388443 4.88549 0.73287C3.94451 1.08841 3.10225 1.63539 2.40207 2.35202C1.69099 3.0522 1.13867 3.90002 0.788474 4.82989C0.443833 5.72152 0.203246 6.73877 0.137651 8.22652C0.066501 9.72538 0.0500488 10.2012 0.0500488 14.0027C0.0500488 17.8043 0.066501 18.2801 0.132096 19.7734C0.197691 21.2611 0.438491 22.284 0.783132 23.1702C1.13867 24.111 1.69099 24.9533 2.40207 25.6534C3.10225 26.3645 3.95007 26.9171 4.87994 27.267C5.77156 27.6117 6.78882 27.8523 8.27678 27.9179C9.76987 27.9837 10.2459 27.9999 14.0474 27.9999C17.849 27.9999 18.3248 27.9837 19.8181 27.9179C21.3058 27.8523 22.3286 27.6117 23.2147 27.267C25.0965 26.5395 26.5842 25.0518 27.3117 23.1702C27.6562 22.2786 27.897 21.2611 27.9626 19.7734C28.0281 18.2801 28.0446 17.8043 28.0446 14.0027C28.0446 10.2012 28.039 9.72538 27.9734 8.23208ZM25.452 19.664C25.3917 21.0315 25.1621 21.7699 24.9706 22.2622C24.5001 23.482 23.532 24.4501 22.3122 24.9206C21.8199 25.112 21.0761 25.3417 19.714 25.4017C18.2372 25.4676 17.7943 25.4838 14.0583 25.4838C10.3224 25.4838 9.87392 25.4676 8.40241 25.4017C7.03496 25.3417 6.29653 25.112 5.80425 24.9206C5.19723 24.6962 4.64469 24.3407 4.19621 23.8758C3.73128 23.4217 3.37574 22.8747 3.15139 22.2677C2.95995 21.7754 2.73026 21.0315 2.67022 19.6696C2.60441 18.1927 2.58817 17.7496 2.58817 14.0136C2.58817 10.2777 2.60441 9.82922 2.67022 8.35792C2.73026 6.99047 2.95995 6.25204 3.15139 5.75976C3.37574 5.15253 3.73128 4.6002 4.20177 4.15151C4.65559 3.68657 5.20257 3.33103 5.80981 3.1069C6.30209 2.91546 7.04607 2.68577 8.40797 2.62551C9.88482 2.55992 10.328 2.54347 14.0637 2.54347C17.8052 2.54347 18.2481 2.55992 19.7196 2.62551C21.087 2.68577 21.8255 2.91546 22.3177 3.1069C22.9248 3.33103 23.4773 3.68657 23.9258 4.15151C24.3907 4.60554 24.7463 5.15253 24.9706 5.75976C25.1621 6.25204 25.3917 6.99581 25.452 8.35792C25.5176 9.83478 25.534 10.2777 25.534 14.0136C25.534 17.7496 25.5176 18.1871 25.452 19.664Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M14.0519 6.80981C10.081 6.80981 6.85913 10.0315 6.85913 14.0026C6.85913 17.9738 10.081 21.1954 14.0519 21.1954C18.0231 21.1954 21.2448 17.9738 21.2448 14.0026C21.2448 10.0315 18.0231 6.80981 14.0519 6.80981ZM14.0519 18.6684C11.4758 18.6684 9.38614 16.579 9.38614 14.0026C9.38614 11.4263 11.4758 9.33683 14.0519 9.33683C16.6283 9.33683 18.7177 11.4263 18.7177 14.0026C18.7177 16.579 16.6283 18.6684 14.0519 18.6684Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M23.2085 6.52539C23.2085 7.45269 22.4566 8.20458 21.5291 8.20458C20.6018 8.20458 19.8499 7.45269 19.8499 6.52539C19.8499 5.59787 20.6018 4.84619 21.5291 4.84619C22.4566 4.84619 23.2085 5.59787 23.2085 6.52539Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_149_308">
+                    <rect width="28" height="28" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <p class="follow-card__text">Βιδρονήσι</p>
+              <div class="follow-card__overlay"></div>
+            </div>
+            <!-- Follow-card end -->
+            <!-- Follow-card start -->
+            <div class="follow-card follow-card--7">
+              <svg
+                class="follow-card__icon"
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_149_308)">
+                  <path
+                    d="M27.9734 8.23208C27.9079 6.74433 27.6673 5.72152 27.3226 4.83523C26.9671 3.89447 26.4201 3.0522 25.7035 2.35202C25.0033 1.64095 24.1555 1.08841 23.2256 0.738425C22.3342 0.393784 21.3167 0.153198 19.829 0.0876025C18.3301 0.0164522 17.8543 0 14.0528 0C10.2513 0 9.77542 0.0164522 8.28212 0.0820473C6.79437 0.147642 5.77156 0.388443 4.88549 0.73287C3.94451 1.08841 3.10225 1.63539 2.40207 2.35202C1.69099 3.0522 1.13867 3.90002 0.788474 4.82989C0.443833 5.72152 0.203246 6.73877 0.137651 8.22652C0.066501 9.72538 0.0500488 10.2012 0.0500488 14.0027C0.0500488 17.8043 0.066501 18.2801 0.132096 19.7734C0.197691 21.2611 0.438491 22.284 0.783132 23.1702C1.13867 24.111 1.69099 24.9533 2.40207 25.6534C3.10225 26.3645 3.95007 26.9171 4.87994 27.267C5.77156 27.6117 6.78882 27.8523 8.27678 27.9179C9.76987 27.9837 10.2459 27.9999 14.0474 27.9999C17.849 27.9999 18.3248 27.9837 19.8181 27.9179C21.3058 27.8523 22.3286 27.6117 23.2147 27.267C25.0965 26.5395 26.5842 25.0518 27.3117 23.1702C27.6562 22.2786 27.897 21.2611 27.9626 19.7734C28.0281 18.2801 28.0446 17.8043 28.0446 14.0027C28.0446 10.2012 28.039 9.72538 27.9734 8.23208ZM25.452 19.664C25.3917 21.0315 25.1621 21.7699 24.9706 22.2622C24.5001 23.482 23.532 24.4501 22.3122 24.9206C21.8199 25.112 21.0761 25.3417 19.714 25.4017C18.2372 25.4676 17.7943 25.4838 14.0583 25.4838C10.3224 25.4838 9.87392 25.4676 8.40241 25.4017C7.03496 25.3417 6.29653 25.112 5.80425 24.9206C5.19723 24.6962 4.64469 24.3407 4.19621 23.8758C3.73128 23.4217 3.37574 22.8747 3.15139 22.2677C2.95995 21.7754 2.73026 21.0315 2.67022 19.6696C2.60441 18.1927 2.58817 17.7496 2.58817 14.0136C2.58817 10.2777 2.60441 9.82922 2.67022 8.35792C2.73026 6.99047 2.95995 6.25204 3.15139 5.75976C3.37574 5.15253 3.73128 4.6002 4.20177 4.15151C4.65559 3.68657 5.20257 3.33103 5.80981 3.1069C6.30209 2.91546 7.04607 2.68577 8.40797 2.62551C9.88482 2.55992 10.328 2.54347 14.0637 2.54347C17.8052 2.54347 18.2481 2.55992 19.7196 2.62551C21.087 2.68577 21.8255 2.91546 22.3177 3.1069C22.9248 3.33103 23.4773 3.68657 23.9258 4.15151C24.3907 4.60554 24.7463 5.15253 24.9706 5.75976C25.1621 6.25204 25.3917 6.99581 25.452 8.35792C25.5176 9.83478 25.534 10.2777 25.534 14.0136C25.534 17.7496 25.5176 18.1871 25.452 19.664Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M14.0519 6.80981C10.081 6.80981 6.85913 10.0315 6.85913 14.0026C6.85913 17.9738 10.081 21.1954 14.0519 21.1954C18.0231 21.1954 21.2448 17.9738 21.2448 14.0026C21.2448 10.0315 18.0231 6.80981 14.0519 6.80981ZM14.0519 18.6684C11.4758 18.6684 9.38614 16.579 9.38614 14.0026C9.38614 11.4263 11.4758 9.33683 14.0519 9.33683C16.6283 9.33683 18.7177 11.4263 18.7177 14.0026C18.7177 16.579 16.6283 18.6684 14.0519 18.6684Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M23.2085 6.52539C23.2085 7.45269 22.4566 8.20458 21.5291 8.20458C20.6018 8.20458 19.8499 7.45269 19.8499 6.52539C19.8499 5.59787 20.6018 4.84619 21.5291 4.84619C22.4566 4.84619 23.2085 5.59787 23.2085 6.52539Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_149_308">
+                    <rect width="28" height="28" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <p class="follow-card__text">Βιδρονήσι</p>
+              <div class="follow-card__overlay"></div>
+            </div>
+            <!-- Follow-card end -->
+            <!-- Follow-card start -->
+            <div class="follow-card follow-card--8">
+              <svg
+                class="follow-card__icon"
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_149_308)">
+                  <path
+                    d="M27.9734 8.23208C27.9079 6.74433 27.6673 5.72152 27.3226 4.83523C26.9671 3.89447 26.4201 3.0522 25.7035 2.35202C25.0033 1.64095 24.1555 1.08841 23.2256 0.738425C22.3342 0.393784 21.3167 0.153198 19.829 0.0876025C18.3301 0.0164522 17.8543 0 14.0528 0C10.2513 0 9.77542 0.0164522 8.28212 0.0820473C6.79437 0.147642 5.77156 0.388443 4.88549 0.73287C3.94451 1.08841 3.10225 1.63539 2.40207 2.35202C1.69099 3.0522 1.13867 3.90002 0.788474 4.82989C0.443833 5.72152 0.203246 6.73877 0.137651 8.22652C0.066501 9.72538 0.0500488 10.2012 0.0500488 14.0027C0.0500488 17.8043 0.066501 18.2801 0.132096 19.7734C0.197691 21.2611 0.438491 22.284 0.783132 23.1702C1.13867 24.111 1.69099 24.9533 2.40207 25.6534C3.10225 26.3645 3.95007 26.9171 4.87994 27.267C5.77156 27.6117 6.78882 27.8523 8.27678 27.9179C9.76987 27.9837 10.2459 27.9999 14.0474 27.9999C17.849 27.9999 18.3248 27.9837 19.8181 27.9179C21.3058 27.8523 22.3286 27.6117 23.2147 27.267C25.0965 26.5395 26.5842 25.0518 27.3117 23.1702C27.6562 22.2786 27.897 21.2611 27.9626 19.7734C28.0281 18.2801 28.0446 17.8043 28.0446 14.0027C28.0446 10.2012 28.039 9.72538 27.9734 8.23208ZM25.452 19.664C25.3917 21.0315 25.1621 21.7699 24.9706 22.2622C24.5001 23.482 23.532 24.4501 22.3122 24.9206C21.8199 25.112 21.0761 25.3417 19.714 25.4017C18.2372 25.4676 17.7943 25.4838 14.0583 25.4838C10.3224 25.4838 9.87392 25.4676 8.40241 25.4017C7.03496 25.3417 6.29653 25.112 5.80425 24.9206C5.19723 24.6962 4.64469 24.3407 4.19621 23.8758C3.73128 23.4217 3.37574 22.8747 3.15139 22.2677C2.95995 21.7754 2.73026 21.0315 2.67022 19.6696C2.60441 18.1927 2.58817 17.7496 2.58817 14.0136C2.58817 10.2777 2.60441 9.82922 2.67022 8.35792C2.73026 6.99047 2.95995 6.25204 3.15139 5.75976C3.37574 5.15253 3.73128 4.6002 4.20177 4.15151C4.65559 3.68657 5.20257 3.33103 5.80981 3.1069C6.30209 2.91546 7.04607 2.68577 8.40797 2.62551C9.88482 2.55992 10.328 2.54347 14.0637 2.54347C17.8052 2.54347 18.2481 2.55992 19.7196 2.62551C21.087 2.68577 21.8255 2.91546 22.3177 3.1069C22.9248 3.33103 23.4773 3.68657 23.9258 4.15151C24.3907 4.60554 24.7463 5.15253 24.9706 5.75976C25.1621 6.25204 25.3917 6.99581 25.452 8.35792C25.5176 9.83478 25.534 10.2777 25.534 14.0136C25.534 17.7496 25.5176 18.1871 25.452 19.664Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M14.0519 6.80981C10.081 6.80981 6.85913 10.0315 6.85913 14.0026C6.85913 17.9738 10.081 21.1954 14.0519 21.1954C18.0231 21.1954 21.2448 17.9738 21.2448 14.0026C21.2448 10.0315 18.0231 6.80981 14.0519 6.80981ZM14.0519 18.6684C11.4758 18.6684 9.38614 16.579 9.38614 14.0026C9.38614 11.4263 11.4758 9.33683 14.0519 9.33683C16.6283 9.33683 18.7177 11.4263 18.7177 14.0026C18.7177 16.579 16.6283 18.6684 14.0519 18.6684Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M23.2085 6.52539C23.2085 7.45269 22.4566 8.20458 21.5291 8.20458C20.6018 8.20458 19.8499 7.45269 19.8499 6.52539C19.8499 5.59787 20.6018 4.84619 21.5291 4.84619C22.4566 4.84619 23.2085 5.59787 23.2085 6.52539Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_149_308">
+                    <rect width="28" height="28" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <p class="follow-card__text">Βιδρονήσι</p>
+              <div class="follow-card__overlay"></div>
+            </div>
+            <!-- Follow-card end -->
+          </div>
+        </section>
+        <!-- Follow-us section end -->
+      </main>
+
+      <!-- Footer start -->
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__logo-container">
+            <p class="footer__logo-title">VisitPrespes</p>
+            <img
+              src="./assets/icons/logo_prespes.svg"
+              alt="Municipallity of Prespes logo"
+              class="footer__logo"
+              loading="lazy"
+            />
+          </div>
+          <nav class="footer__nav">
+            <ul class="footer__link-list">
+              <li class="footer__list-item footer__useful">
+                <p class="footer__item-title">Useful info</p>
+                <a href="#" class="footer__link">Lorem ipsum</a
+                ><a href="#" class="footer__link">Dolor sit amet</a
+                ><a href="#" class="footer__link">Consectetur</a>
+              </li>
+              <li class="footer__list-item footer__contact">
+                <p class="footer__item-title">Contact</p>
+                <a href="#" class="footer__link">Lorem ipsum</a
+                ><a href="#" class="footer__link">Dolor sit amet</a
+                ><a href="#" class="footer__link">Consectetur</a>
+              </li>
+              <li class="footer__list-item footer__about">
+                <p class="footer__item-title">About</p>
+                <a href="#" class="footer__link">Lorem ipsum</a
+                ><a href="#" class="footer__link">Dolor sit amet</a
+                ><a href="#" class="footer__link">Consectetur</a>
+              </li>
+              <li class="footer__list-item footer__social">
+                <p class="footer__item-title">Follow us</p>
+                <a href="#" class="footer__link">Lorem ipsum</a
+                ><a href="#" class="footer__link">Dolor sit amet</a
+                ><a href="#" class="footer__link">Consectetur</a>
+              </li>
+              <li class="footer__list-item footer__policy">
+                <a href="#" class="footer__link">Terms of use</a
+                ><a href="#" class="footer__link">Privacy policy</a
+                ><a href="#" class="footer__link">Cookies</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer__fader">
+          <svg
+            width="3800"
+            height="161"
+            viewBox="0 0 3800 161"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            id="footer_fader"
+          >
+            <rect
+              x="-1"
+              width="3800"
+              height="161"
+              fill="url(#paint0_linear_149_295)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_149_295"
+                x1="960"
+                y1="0"
+                x2="960"
+                y2="161"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#07116B" />
+                <stop offset="1" stop-color="#07116B" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </footer>
+      <div class="parallax-footer"></div>
+      <div class="footer__img-wrapper"></div>
+      <!-- Footer end -->
+    </div>
+    <!-- Parallax wrapper end -->
+  </body>
+</html>

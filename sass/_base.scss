@@ -1,0 +1,283 @@
+:root {
+  /* Color CSS variables */
+  --color-primary: #071169;
+  --color-primary-light: hsl(234, 88%, 40%);
+  --color-primary-extra-light: #5960a748;
+  --color-secondary: #95deee;
+  --color-tertiary: #dfedb8;
+  --color-tertiary-light: #fbfcc5;
+  --color-tertiary-dark: #c2e65e;
+  --color-bg: #e5e5e5;
+  --color-bg-dark: #f8f8f8;
+  --color-grey: #999999;
+  --color-grey-light: #dddddd;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Font CSS variables */
+  --ff-inter: 'Inter', sans-serif;
+  --ff-dancing: 'Dancing Script', cursive;
+  --ff-roboto: 'Roboto', sans-serif;
+  --ff-roboto-slab: 'Roboto Slab', serif;
+  --ff-fira-sans: 'Fira Sans', sans-serif;
+
+  /* Responsive font-size variables */
+  --fs-placeholder: clamp(0.875rem, 0.8205rem + 0.2564vw, 1.125rem);
+  --fs-14: clamp(0.75rem, 0.715rem + 0.16vw, 0.875rem);
+  --fs-16: clamp(0.9375rem, 0.9231rem + 0.0641vw, 1rem);
+  --fs-18: clamp(1rem, 0.925rem + 0.2vw, 1.125rem);
+  --fs-20: clamp(1rem, 0.9423rem + 0.2564vw, 1.25rem);
+  --fs-24: clamp(1.125rem, 1.1rem + 0.4vw, 1.5rem);
+  --fs-28: clamp(1.25rem, 1.1346rem + 0.5128vw, 1.75rem);
+  --fs-32: clamp(1.375rem, 1.2308rem + 0.641vw, 2rem);
+  --fs-36: clamp(1.5rem, 1.05rem + 1.2vw, 2.25rem);
+  --fs-42: clamp(1.5rem, 1.2692rem + 1.0256vw, 2.5rem);
+  --fs-48: clamp(2.1rem, 1.56rem + 1.44vw, 3rem);
+  --fs-56: clamp(1.75rem, 1.3462rem + 1.7949vw, 3.5rem);
+  --fs-64: clamp(1.75rem, 1.2308rem + 2.3077vw, 4rem);
+  --fs-96: clamp(2rem, 1.0649rem + 4.1558vw, 6rem);
+
+  /* Other CSS variables*/
+  --responsive-2: clamp(1rem, 0.7692rem + 1.0256vw, 2rem);
+  --responsive-3: clamp(1.5rem, 1.1538rem + 1.5385vw, 3rem);
+  --responsive-4: clamp(2rem, 1.5385rem + 2.0513vw, 4rem);
+  --responsive-5: clamp(2.5rem, 1.9231rem + 2.5641vw, 5rem);
+  --responsive-6: clamp(3rem, 2.3077rem + 3.0769vw, 6rem);
+  --responsive-8: clamp(4rem, 3.0769rem + 4.1026vw, 8rem);
+  --responsive-10: clamp(5rem, 3.8462rem + 5.1282vw, 10rem);
+
+  /* Elements height variables */
+  --header-height: clamp(3.5rem, 3.2rem + 1.5vw, 5rem);
+  --footer-height: calc(60vh - var(--header-height));
+
+  /* Breakpoints for media queries */
+  /*
+  bp-640px: 40em
+  bp-800px: 55em
+  bp-1040px: 65em
+  bp-1366px: 85.375em
+  bp-1040px: 65em
+  */
+}
+
+/* Global reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::selection {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+*::placeholder {
+  font-size: var(--fs-placeholder);
+  opacity: 0.7;
+  color: var(--color-secondary-dark);
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+/* General styling properties and typography start */
+body {
+  min-height: 100vh;
+
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-18);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: var(--color-primary);
+
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-family: var(--ff-fira-sans);
+  font-size: var(--fs-96);
+  font-weight: 900;
+  line-height: 0.9;
+  text-align: center;
+}
+
+h2 {
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-48);
+  font-weight: 900;
+  text-align: center;
+}
+
+h3,
+h4 {
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-24);
+  font-weight: 900;
+}
+
+// Link styles in the right order
+a {
+  font-family: inherit;
+  font-size: var(--fs-18);
+  font-weight: 500;
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+// a:link {
+// }
+
+// a:visited {
+// }
+
+// a:focus {
+// }
+
+// a:hover {
+// }
+
+// a:active {
+// }
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+  display: block;
+  max-width: 100%;
+}
+
+button,
+label,
+input {
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-18);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: var(--color-primary);
+}
+
+/* General styling properties and typography end */
+
+.main {
+  position: relative;
+  z-index: 1;
+
+  background-color: var(--color-white);
+}
+
+.parallax-wrapper {
+  height: 100%;
+  width: 100%;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  position: relative;
+}
+
+/* Utility classes start */
+.home-container-center,
+.home-container-right,
+.home-container-left {
+  width: min(90%, 100rem);
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 40em) {
+  .home-container-center,
+  .home-container-right,
+  .home-container-left {
+    width: min(calc(95% - (2 * var(--header-height))), 100rem);
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .home-container-center {
+    width: min(calc(95% - (2 * var(--header-height))), 100rem);
+    margin: 0 auto;
+  }
+
+  .home-container-right {
+    width: min(calc(97.5% - (2 * var(--header-height))), calc(100rem + 2.5%));
+    margin: 0 var(--header-height) 0 auto;
+  }
+
+  .home-container-left {
+    width: min(calc(97.5% - (2 * var(--header-height))), calc(100rem + 2.5%));
+    margin: 0 auto 0 var(--header-height);
+  }
+}
+
+@media screen and (min-width: 85.375em) {
+  .home-container-center {
+    width: min(calc(90% - (2 * var(--header-height))), 100rem);
+    margin: 0 auto;
+  }
+
+  .home-container-right {
+    width: min(calc(95% - (2 * var(--header-height))), calc(100rem + 5%));
+    margin: 0 var(--header-height) 0 auto;
+  }
+
+  .home-container-left {
+    width: min(calc(95% - (2 * var(--header-height))), calc(100rem + 5%));
+    margin: 0 auto 0 var(--header-height);
+  }
+}
+
+@media screen and (min-width: 125em) {
+  .home-container-center,
+  .home-container-right,
+  .home-container-left {
+    width: min(calc(95% - (2 * var(--header-height))), 100rem);
+    margin: 0 auto;
+  }
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.appear {
+  display: block;
+}
+
+.disappear {
+  display: none;
+}
+
+.current.header__nav-link {
+  &::before {
+    transform: scaleY(1);
+  }
+}
+/* Utility classes end */

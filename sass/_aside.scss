@@ -1,0 +1,124 @@
+/* Aside nav right styling start */
+.aside {
+  position: fixed;
+  top: var(--header-height);
+  bottom: 0;
+
+  width: var(--header-height);
+  background-color: transparent;
+
+  transition: transform 0.5s ease-in-out;
+
+  &--right {
+    @extend .aside;
+    right: 0;
+    z-index: 101;
+    transform: translateX(100%);
+
+    background-color: transparent;
+    transition: all 0.15s ease;
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    margin-block: 1.5rem;
+  }
+
+  &__nav {
+    margin-bottom: var(--header-height);
+  }
+
+  &__list-item {
+    width: fit-content;
+    cursor: pointer;
+
+    & svg {
+      width: clamp(1.35rem, 1.0847rem + 1.0612vw, 2rem);
+      transition: all 0.25s ease-in-out;
+    }
+
+    & path {
+      fill: var(--color-white);
+    }
+
+    & circle {
+      stroke: var(--color-white);
+    }
+
+    &:hover path {
+      fill: var(--color-secondary);
+      stroke: var(--color-secondary);
+    }
+
+    &:hover circle {
+      stroke: var(--color-secondary);
+    }
+  }
+
+  //   &__language {
+  //   }
+
+  &__login {
+    margin-bottom: 5vh;
+  }
+
+  //   &__facebook {
+  //   }
+
+  //   &__instagram {
+  //   }
+
+  &__youtube {
+    margin-bottom: 10vh;
+  }
+
+  &__accessibility {
+    & button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+
+  &--scrolled {
+    &.aside--right {
+      background-color: var(--color-white);
+    }
+
+    & .aside__list-item {
+      & path {
+        fill: var(--color-primary);
+      }
+
+      & circle {
+        stroke: var(--color-primary);
+      }
+    }
+
+    & .aside__list-item:hover {
+      & path {
+        fill: var(--color-secondary);
+        stroke: var(--color-secondary);
+      }
+
+      & circle {
+        stroke: var(--color-secondary);
+      }
+    }
+  }
+}
+
+/* Media queries for aside */
+@media screen and (min-width: 55em) {
+  .aside {
+    &--right {
+      transform: translateX(0);
+    }
+  }
+}
+/* Aside nav right styling end */
